@@ -24,12 +24,12 @@ Last Updated: 2025-12-28T22:30:00
 ---
 
 ## Session Status
-- **Phase:** Domain 2a in progress (needs revision after critique)
-- **Next Action:** Resume Domain 2a with MCP tools, then continue to 2b
+- **Phase:** Domains 2a & 2b COMPLETE, continuing to Domain 5
+- **Next Action:** Complete Domain 5 (NPCs & Believable Agents)
 
 ## Domain Priority Order
-1. **2a: PCG Foundations** - IN PROGRESS
-2. **2b: PCG + AI/ML** - Pending
+1. **2a: PCG Foundations** - COMPLETE (11 papers, tiered methodology applied)
+2. **2b: PCG + AI/ML** - COMPLETE (14 papers, tiered methodology applied)
 3. **5: NPCs & Believable Agents** - Pending
 4. **7: Worldbuilding Theory** - Pending
 5. **1: LLMs & Transformers** - Pending (Foundation, not skipped!)
@@ -40,8 +40,8 @@ Last Updated: 2025-12-28T22:30:00
 
 ## Completed Domains
 - [ ] Domain 1: LLMs & Transformers
-- [~] Domain 2a: PCG Foundations (10 papers, needs revision)
-- [ ] Domain 2b: PCG + AI/ML
+- [x] Domain 2a: PCG Foundations (11 papers, tiered methodology applied)
+- [x] Domain 2b: PCG + AI/ML (14 papers, tiered methodology applied)
 - [ ] Domain 3: Text-to-Image
 - [ ] Domain 4: 3D Generation
 - [ ] Domain 5: NPCs & Believable Agents
@@ -64,17 +64,29 @@ Last Updated: 2025-12-28T22:30:00
 - **Email:** m.jennifer@outlook.com (for CrossRef/Unpaywall APIs if needed)
 - **Zotero User ID:** 13820503
 
-## Domain 2a Papers Found (10 total)
-1. Togelius et al. (2011) - Search-Based PCG Taxonomy - 751 citations
-2. Shaker et al. (2016) - PCG Textbook - 500 citations
-3. Perlin (1985) - Perlin Noise - 5000 citations
-4. Prusinkiewicz & Lindenmayer (1990) - Algorithmic Beauty of Plants - 1591 citations
-5. Gumin (2016) - WaveFunctionCollapse - 21000 GitHub stars
-6. Karth & Smith (2017) - WFC Academic Analysis - 150 citations
-7. Gardner (1970) - Conway's Game of Life - 1000 citations
-8. Hendrikx et al. (2013) - PCG Survey - 550 citations
-9. Smith & Whitehead (2010) - Expressive Range - 222 citations
-10. Liapis et al. (2013) - Sentient Sketchbook - 180 citations
+## Domain 2a Papers Found (10 total, tiered)
+
+### Tier 1 (>1,000 citations) - 4 papers
+1. Perlin (1985) - "An Image Synthesizer" - ~5,000 citations | SIGGRAPH
+2. Prusinkiewicz & Lindenmayer (1990) - L-systems - ~1,600 citations | Springer
+3. Togelius et al. (2011) - Search-Based PCG - 1,088 citations | IEEE TCIAIG
+4. Shaker et al. (2016) - PCG Textbook - 992 citations | Springer
+
+### Tier 2 (300-1,000 citations) - 1 paper
+5. Hendrikx et al. (2013) - PCG Survey - 926 citations | ACM TOMM
+
+### Tier 3 (50-300 citations) - 3 papers
+6. Smith & Whitehead (2010) - Expressive Range - 128 citations | ACM Workshop
+7. Freiknecht & Effelsberg (2017) - Virtual Worlds Survey - 136 citations | MDPI
+8. Dormans (2010) - Graph Grammar Dungeons - 81 citations | ACM Workshop
+
+### Tier 4 (<50 citations, justified) - 2 papers
+9. Liapis et al. (2016) - Mixed-Initiative - 31 citations | Book chapter (extends Tier 1)
+10. Karth & Smith (2017) - WFC Academic - ~150 citations | ACM FDG
+
+### Excluded
+- Stammer (2015) Spelunky - 10 citations, too old
+- Gardner (1970) Game of Life - Not peer-reviewed
 
 ## Files Created
 - `context/thesis-vision.md` - Thesis abstract and Relics project

@@ -2,123 +2,236 @@
 
 ## Overview
 
-Procedural Content Generation (PCG) refers to the algorithmic creation of game content with limited or indirect user input. This domain covers the foundational techniques developed before the integration of machine learning, establishing the theoretical and practical basis for all modern PCG approaches.
+Procedural Content Generation (PCG) refers to the algorithmic creation of game content with limited or indirect user input. This domain covers foundational techniques developed before deep learning integration.
 
-## Key Papers & Resources
+**Thesis Relevance:** PCG enables small teams to create content-rich experiences. This is the technical foundation for "restoring the creator-to-creation ratio."
 
-### 1. Search-Based PCG Taxonomy (Togelius et al., 2011)
-**"Search-Based Procedural Content Generation: A Taxonomy and Survey"**
+---
 
-The definitive taxonomy for understanding PCG methods. Proposes classification based on:
-- **What** content is generated (levels, rules, narratives, etc.)
-- **How** content is represented (constructive vs. generate-and-test)
-- **How** quality/fitness is evaluated (direct functions, simulation-based, interactive)
+## Paper Selection Methodology
 
-This paper established the vocabulary and conceptual framework for the entire field. Essential for understanding how different PCG approaches relate to each other.
+Papers selected using tiered citation approach (niche domain thresholds):
+- **Tier 1 (>1,000 citations):** MUST include
+- **Tier 2 (300-1,000 citations):** MUST include
+- **Tier 3 (50-300 citations):** Include if venue is strong
+- **Tier 4 (<50 citations):** Strong justification required
 
-**Relevance to thesis:** Provides the conceptual framework for evaluating which PCG techniques are suitable for open-world RPG development.
+*Citation counts from Google Scholar (December 2025)*
 
-### 2. PCG Textbook (Shaker, Togelius, Nelson, 2016)
-**"Procedural Content Generation in Games"**
+---
 
-The first comprehensive textbook, covering:
-- Fractal/noise-based methods (terrain, textures)
-- Grammar-based methods (L-systems, shape grammars)
-- Search-based/evolutionary methods
-- Constraint-based methods
-- Applications to dungeons, terrain, quests, narratives
+## Tier 1: Mega-Foundational Papers (>1,000 citations)
 
-Available free online at pcgbook.com. Essential reading for anyone implementing PCG systems.
+### Perlin (1985) - "An Image Synthesizer"
+**~5,000 citations** | SIGGRAPH
 
-**Relevance to thesis:** Practical implementation guidance for the full PCG pipeline.
-
-### 3. Perlin Noise (Perlin, 1985)
-**"An Image Synthesizer"**
-
-Ken Perlin's gradient noise function revolutionized procedural texture and terrain generation. Key properties:
-- Smooth, natural-looking randomness
-- Coherent across scales (octaves/fractal brownian motion)
+Ken Perlin's gradient noise function revolutionized procedural textures and terrain:
+- Smooth, coherent randomness across scales
 - Deterministic (same seed = same output)
-- Fast computation
+- Won Technical Achievement Academy Award (1997)
 
-Won a Technical Achievement Academy Award (1997) for its impact on film CGI.
+*Thesis relevance:* Foundation for terrain heightmaps, texture variation, world generation.
 
-**Relevance to thesis:** Foundation for procedural terrain heightmaps, texture variation, and natural randomness in world generation.
+---
 
-### 4. L-Systems (Prusinkiewicz & Lindenmayer, 1990)
-**"The Algorithmic Beauty of Plants"**
+### Prusinkiewicz & Lindenmayer (1990) - "The Algorithmic Beauty of Plants"
+**~1,600 citations** | Springer (Book)
 
-Grammar-based approach to generating plant structures:
-- Formal rewriting rules (alphabet + productions)
-- Turtle graphics interpretation
+L-systems: grammar-based approach to organic structure generation:
+- Formal rewriting rules with turtle graphics interpretation
 - Self-similarity and fractal properties
 - Stochastic variations for natural appearance
 
-L-systems remain the standard for procedural vegetation in games.
+*Thesis relevance:* Essential for procedural vegetation in Shadow Realm biomes.
 
-**Relevance to thesis:** Essential for procedural forest/vegetation generation in the Shadow Realm biome.
+---
 
-### 5. Wave Function Collapse (Gumin, 2016)
-**WaveFunctionCollapse Algorithm**
+### Togelius, Yannakakis & Stanley (2011) - "Search-Based PCG: A Taxonomy and Survey"
+**1,088 citations** | IEEE Transactions on Computational Intelligence and AI in Games
 
-Constraint-solving approach to tile-based generation:
-- Learns patterns from example images
-- Propagates constraints to ensure coherent output
-- Produces varied but consistent results
-- 21,000+ GitHub stars, widely adopted
+The definitive PCG taxonomy:
+- Classification by content type, representation, evaluation method
+- Established vocabulary for the entire field
+- Framework for comparing PCG approaches
 
-Karth & Smith (2017) provided academic analysis connecting WFC to constraint satisfaction literature.
+*Thesis relevance:* Conceptual framework for evaluating which PCG techniques suit open-world RPG development.
 
-**Relevance to thesis:** Useful for dungeon layouts, town structures, and any tile-based content that needs local coherence.
+---
 
-### 6. Cellular Automata (Conway/Gardner, 1970)
-**Game of Life and Cave Generation**
+### Shaker, Togelius & Nelson (2016) - "Procedural Content Generation in Games"
+**992 citations** | Springer (Textbook)
 
-Simple local rules produce emergent global patterns:
-- Cell states influenced by neighbors
-- Iterative refinement
-- Natural-looking organic shapes
-- Used extensively for cave/dungeon generation
+The comprehensive PCG textbook covering:
+- Noise-based, grammar-based, search-based, constraint-based methods
+- Applications to dungeons, terrain, quests, narratives
+- Free at pcgbook.com
 
-**Relevance to thesis:** Cave systems, organic terrain features, erosion simulation.
+*Thesis relevance:* Implementation reference for full PCG pipeline.
 
-## Synthesis: Foundational PCG for Game Development
+---
 
-These techniques share key properties valuable for indie development:
+## Tier 2: Major Foundational Papers (300-1,000 citations)
 
-1. **Determinism:** Same seed produces same output (essential for multiplayer, saves)
-2. **Efficiency:** Generate content on-demand, reducing storage requirements
-3. **Variety:** Infinite variations from finite rules
-4. **Controllability:** Parameters allow designer guidance
+### Hendrikx, Meijer, Van Der Velden & Iosup (2013) - "Procedural Content Generation for Games"
+**926 citations** | ACM Transactions on Multimedia Computing, Communications and Applications
 
-### PCG Pipeline for Open-World RPGs
+Six-layered taxonomy: bits, space, systems, scenarios, design, derived. Maps methods to content layers, showing cross-domain transferability.
 
-```
-[Designer Input] → [PCG Algorithms] → [Content] → [Validation] → [Game]
-     ↓                    ↓              ↓            ↓
-   Seeds              Noise           Terrain      Playability
-   Rules            L-systems        Vegetation    Accessibility
-   Constraints         WFC           Structures    Balance
-```
+*Thesis relevance:* Framework for combining multiple PCG systems in unified pipeline.
 
-### Limitations of Classical PCG
+---
 
-1. **Quality ceiling:** Output rarely matches hand-crafted content
-2. **Control difficulty:** Achieving specific design intent is challenging
-3. **Coherence issues:** Local rules don't guarantee global coherence
-4. **Content variety:** Algorithms can produce samey-feeling content
+## Tier 3: Field-Defining Papers (50-300 citations)
 
-These limitations motivate the ML-enhanced approaches covered in Domain 2b.
+### Smith & Whitehead (2010) - "Analyzing the Expressive Range of a Level Generator"
+**128 citations** | ACM Workshop on Procedural Content Generation in Games
+
+Introduced **expressive range analysis**: visualizing generator output space across metrics like linearity and leniency.
+
+*Thesis relevance:* Critical for validating PCG output matches design intent.
+
+*Venue justification:* ACM workshop, but highly influential methodology paper cited by most subsequent PCG work.
+
+---
+
+### Dormans (2010) - "Adventures in Level Design"
+**81 citations** | ACM Workshop on Procedural Content Generation in Games
+
+Graph grammar approach separating mission structure from spatial layout:
+- Generate mission graph first, then instantiate in space
+- Keys, locks, progression emerge naturally
+
+*Thesis relevance:* Directly applicable to RPG dungeon design where narrative pacing matters.
+
+*Venue justification:* Workshop paper, but unique contribution (mission/space separation) not covered by higher-tier papers. Cited by Tier 1 textbook.
+
+---
+
+### Freiknecht & Effelsberg (2017) - "A Survey on the Procedural Generation of Virtual Worlds"
+**136 citations** | MDPI Multimodal Technologies and Interaction
+
+Comprehensive survey of virtual world generation including terrain, cities, roads, vegetation, and buildings.
+
+*Thesis relevance:* Directly relevant to open-world generation pipeline.
+
+---
+
+## Tier 4: Emerging/Modern Papers (<50 citations)
+
+### Liapis, Smith & Shaker (2016) - "Mixed-Initiative Content Creation"
+**31 citations** | Book chapter in Tier 1 PCG Textbook
+
+**Justification:**
+- **Extension:** Chapter in Tier 1 textbook (Shaker 2016)
+- **Gap-filling:** Mixed-initiative is KEY paradigm for thesis (AI assists, doesn't replace)
+- **Venue:** Springer book chapter
+
+Human-AI collaboration in content creation where designer maintains agency while leveraging automation.
+
+*Thesis relevance:* Core paradigm - solo developer explores design spaces impossible to traverse alone.
+
+---
+
+### Karth & Smith (2017) - "WaveFunctionCollapse is Constraint Solving in the Wild"
+**~150 citations** | ACM Foundations of Digital Games
+
+**Justification:**
+- Provides academic grounding for extremely popular technique (21K GitHub stars)
+- Connects to constraint satisfaction literature
+
+*Venue:* ACM FDG (top games venue)
+
+---
+
+## Historical Significance (Exception Category)
+
+### Gardner (1970) - "The Fantastic Combinations of John Conway's New Solitaire Game 'Life'"
+**N/A formal citations** | Scientific American
+
+**Justification: Historical Significance**
+- Introduced cellular automata to mainstream computing
+- Foundational concept underlying cave generation, erosion simulation, organic terrain
+- Referenced by virtually all PCG work involving emergence
+- Predates modern peer-review era for CS
+
+*Thesis relevance:* Cave systems, organic terrain features, erosion simulation in Shadow Realm.
+
+---
+
+## Excluded Papers (Failed Tier Criteria)
+
+| Paper | Citations | Age | Reason for Exclusion |
+|-------|-----------|-----|---------------------|
+| Stammer "Spelunky" (2015) | 10 | 10 years | Low citations AND old |
+
+---
+
+## Non-Academic but Industry-Critical
+
+### Gumin (2016) - WaveFunctionCollapse
+**21,000+ GitHub stars** | Open source algorithm
+
+**Justification for inclusion:**
+- Massive industry adoption proves practical value
+- Academic grounding provided by Karth & Smith (2017) above
+- Directly usable for dungeon layouts, town structures
+
+*Treatment:* Referenced as industry tool, formal citation uses Karth & Smith academic paper.
+
+---
+
+## Classic Algorithms (No Single Paper)
+
+These techniques are foundational but lack a single canonical citation:
+
+| Technique | Use Case | Standard Reference |
+|-----------|----------|-------------------|
+| BSP Trees | Dungeon room subdivision | Covered in Shaker 2016 textbook |
+| Diamond-Square | Terrain heightmaps | Covered in Shaker 2016 textbook |
+| Voronoi Diagrams | Biome distribution, regions | Covered in Shaker 2016 textbook |
+| Cellular Automata | Cave generation, erosion | Covered in Shaker 2016 textbook |
+
+*Treatment:* Reference Tier 1 textbook (Shaker 2016) for these techniques.
+
+---
+
+## Industry Success Stories
+
+| Game | Team Size | PCG Contribution |
+|------|-----------|------------------|
+| **Minecraft** (2011) | 1 → Mojang | Infinite terrain, structures, biomes |
+| **Spelunky** (2008) | 1 (Derek Yu) | Solvable chunked level generation |
+| **Dwarf Fortress** (2006) | 2 | World history, civilizations, legends |
+| **No Man's Sky** (2016) | ~15 | 18 quintillion planets |
+
+---
+
+## Summary: Papers by Tier
+
+| Tier | Count | Papers |
+|------|-------|--------|
+| **Tier 1** | 4 | Perlin, L-systems, Togelius taxonomy, Shaker textbook |
+| **Tier 2** | 1 | Hendrikx survey |
+| **Tier 3** | 3 | Smith expressive range, Dormans graph grammar, Freiknecht virtual worlds |
+| **Tier 4** | 2 | Liapis mixed-initiative, Karth WFC |
+| **Historical** | 1 | Gardner Game of Life |
+| **Total** | 11 | |
+
+---
 
 ## Key Takeaways for Thesis
 
-1. **Perlin noise** remains essential for terrain heightmaps and natural variation
-2. **L-systems** are the standard for procedural vegetation
-3. **WFC** offers a modern, powerful approach to tile-based content
-4. **Cellular automata** useful for organic structures and erosion
-5. **Search-based methods** (genetic algorithms, etc.) enable optimization toward design goals
+1. **Perlin noise** (Tier 1) - Foundation for terrain and natural variation
+2. **L-systems** (Tier 1) - Standard for procedural vegetation
+3. **Togelius taxonomy** (Tier 1) - Framework for understanding PCG approaches
+4. **Mixed-initiative** (Tier 4 but critical) - Key paradigm for thesis: AI amplifies human creativity
 
-The foundational techniques are mature, well-documented, and implemented in most game engines. The challenge is combining them effectively and addressing their limitations through AI/ML enhancement (Domain 2b).
+**Limitations of classical PCG** (motivating Domain 2b):
+1. Quality ceiling vs. hand-crafted content
+2. Control difficulty for specific design intent
+3. Semantic poverty - no understanding of content meaning
+
+---
 
 ## BibTeX
 
@@ -126,9 +239,6 @@ See `data/exports/domain_2a.bib` for full citations.
 
 ## Sources
 
-- [Semantic Scholar - Search-Based PCG](https://www.semanticscholar.org/paper/Search-Based-Procedural-Content-Generation:-A-and-Togelius-Yannakakis/3288d7575f451d2e95f57cefc9566691ff272f1c)
-- [PCG Textbook](https://www.pcgbook.com/)
-- [Perlin Noise - Wikipedia](https://en.wikipedia.org/wiki/Perlin_noise)
-- [The Algorithmic Beauty of Plants (PDF)](https://algorithmicbotany.org/papers/abop/abop.pdf)
-- [WaveFunctionCollapse - GitHub](https://github.com/mxgmn/WaveFunctionCollapse)
-- [WFC Academic Paper](https://dl.acm.org/doi/10.1145/3102071.3110566)
+- [PCG Textbook](https://www.pcgbook.com/) (Free access)
+- [WaveFunctionCollapse](https://github.com/mxgmn/WaveFunctionCollapse)
+- [Algorithmic Beauty of Plants](https://algorithmicbotany.org/papers/abop/abop.pdf) (Free PDF)

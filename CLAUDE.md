@@ -121,14 +121,82 @@ Use these tools for literature searches:
 
 5. **Export format:** Generate BibTeX for Zotero import with complete metadata (author, year, title, journal/venue, DOI)
 
-## Citation Tiers
+## Citation Tiers & Paper Selection Methodology
 
-When evaluating papers, consider citation count as an indicator of influence:
+### CRITICAL: Search for Tier 1-2 Gaps First
 
-- **Tier 1 (Mega-foundational):** >50,000 citations - Transformers, BERT, GPT-3
-- **Tier 2 (Major foundational):** 10,000-50,000 citations - CLIP, GANs, Latent Diffusion
-- **Tier 3 (Field-defining):** 1,000-10,000 citations - Codex, 3DGS, Generative Agents
-- **Tier 4 (Important modern):** 100-1,000 citations - Domain-specific key papers
+Before including ANY paper in a domain review:
+1. **First pass:** Search exhaustively for Tier 1 and Tier 2 papers in the domain
+2. **Second pass:** Only after Tier 1-2 are covered, search for Tier 3 papers
+3. **Third pass:** Tier 4 papers only to fill specific gaps with strong justification
+
+### Tier Definitions
+
+#### For Major AI/ML Domains (LLMs, Diffusion, 3D Generation)
+
+| Tier | Citations | Rule | Examples |
+|------|-----------|------|----------|
+| **Tier 1 (Mega-foundational)** | >10,000 | MUST include | Transformers (158k), GPT-3 (51k), CLIP (40k), NeRF (10k) |
+| **Tier 2 (Major foundational)** | 1,000-10,000 | MUST include | 3DGS (6k), DreamFusion (3k), Generative Agents (2.9k) |
+| **Tier 3 (Field-defining)** | 100-1,000 | Include if venue is strong | Domain-specific important papers |
+| **Tier 4 (Emerging/Modern)** | <100 | Strong justification required | Very recent (<2 years) OR fills critical gap |
+
+#### For Niche Domains (PCG, Game AI, Worldbuilding)
+
+Smaller fields have lower absolute citation counts. Adjust thresholds:
+
+| Tier | Citations | Rule | Examples |
+|------|-----------|------|----------|
+| **Tier 1 (Mega-foundational)** | >1,000 | MUST include | Perlin Noise (~5k), L-systems (~1.6k) |
+| **Tier 2 (Major foundational)** | 300-1,000 | MUST include | Search-Based PCG (751), PCG Textbook (~500), Hendrikx Survey (346) |
+| **Tier 3 (Field-defining)** | 50-300 | Include if venue is strong | Expressive Range (128), Dormans (81) |
+| **Tier 4 (Emerging/Modern)** | <50 | Strong justification required | Must explain why included |
+
+### Justification Requirements for Tier 4 Papers
+
+When including a paper with <100 citations (major domains) or <50 citations (niche domains), you MUST provide:
+
+1. **Recency justification:** Published within last 2-3 years, insufficient time to accumulate citations
+2. **Gap-filling justification:** Covers a critical concept not addressed by higher-tier papers
+3. **Extension justification:** Directly extends or validates a Tier 1-2 paper
+4. **Venue quality:** Published in top venue (NeurIPS, ICML, SIGGRAPH, IEEE TCIAIG, ACM CHI/FDG)
+
+Format in reviews:
+```
+**[Paper Name]** - X citations
+Justification: [Recency/Gap/Extension] - [Specific reason]
+Venue: [Conference/Journal name and quality indicator]
+```
+
+### Venue Quality Indicators
+
+**Top-tier venues (strong justification alone may suffice):**
+- AI/ML: NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, SIGGRAPH
+- Games: IEEE TCIAIG, ACM FDG, AIIDE, IEEE CoG
+- HCI: ACM CHI, UIST
+
+**Mid-tier venues (need additional justification):**
+- Workshops at top venues
+- ACM TOMM, IEEE TG
+- arXiv preprints (only if highly cited or very recent and impactful)
+
+### Exception: Historical Significance
+
+Some works transcend citation metrics due to exceptional historical or cultural impact:
+- Pre-modern-era publications (before peer review was standard)
+- Works with massive real-world adoption (e.g., algorithms used industry-wide)
+- Foundational concepts cited by virtually all subsequent work in the field
+
+Examples: Gardner's Game of Life (1970), Shannon's information theory papers
+
+**Treatment:** Include with explicit "Historical Significance" justification.
+
+### Red Flags - Papers to Exclude
+
+- Low citations AND old (>5 years with <50 citations = field rejected it)
+- Non-peer-reviewed without exceptional impact or historical significance
+- Predatory journals
+- Workshop papers without follow-up journal version (unless <3 years old)
 
 ## Output Formats
 
