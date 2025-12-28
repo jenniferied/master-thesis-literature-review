@@ -1,64 +1,109 @@
-# todo
+# Literature Review TODO
 
-## Setup (One-Time)
+Last Updated: 2025-12-28
 
-- [ ] Install Inciteful Zotero plugin
-  - Download from: https://github.com/inciteful-xyz/inciteful-zotero-plugin/releases
-  - In Zotero: Tools → Add-ons → Install from File
-  - Test: Right-click any paper → Inciteful Tools → Graph Search
+## Current Session Tasks
 
-- [ ] Verify LitStudy works: `python -c "import litstudy; print('OK')"`
+- [x] Domain 1: LLMs & Transformers (11 papers)
+- [x] Domain 2a: PCG Foundations (11 papers)
+- [x] Domain 2b: PCG + AI/ML (14 papers)
+- [x] Domain 3: Text-to-Image/Video + Style Consistency (17 papers)
+- [x] Domain 4: 3D Generation (8 papers)
+- [x] Domain 5: NPCs & Believable Agents (14 papers)
+- [x] Domain 6: Generative Worlds (9 papers)
+- [x] Domain 7: Worldbuilding Theory (12 papers)
+- [x] Domain 8 (exploratory): Indie Dev Tools (11 papers/tools)
+- [x] Domain 8b: Audio Generation (10 papers/tools)
+- [x] Domain 8c: Quest & Dialogue (11 papers)
+- [x] Domain 8d: Multi-Agent Systems (8 papers)
+- [x] Domain 8e: Auto-Rigging (8 papers/tools)
+- [x] Domain 8f: Houdini + ML (10 tools)
+- [x] Domain 8g: UE5 + ML/PCG (11 features)
 
-## Research Domains
+## In Progress
 
-### Priority 1: Core Thesis Domains
+- [ ] **Create Domain 8a: Animation & Rigging**
+  - Merge animation content from domain_8_exploratory.md
+  - Merge rigging content from domain_8e_auto_rigging.md
+  - Search for foundational AI animation papers
+  - Search for recent SIGGRAPH 2023-2024 papers
 
-- [ ] **Domain 2: Procedural Content Generation**
-  - Search for Togelius "Search-Based PCG" (751 citations)
-  - Search for Summerville "PCGML" (425 citations)
-  - Find Shaker PCG textbook
-  - Add to Zotero collection "PCG"
+- [ ] **Expand Domain 8g: UE5**
+  - Research UE5 roadmap (5.2 → 5.5+)
+  - Add Convai integration
+  - Add muscle deformation (MetaHuman)
+  - Add ML features beyond PCG
 
-- [ ] **Domain 5: NPCs & Believable Agents**
-  - Search for Park "Generative Agents" (2.9k citations)
-  - Search for Bates "Believable Agents" (1.4k citations)
-  - Add to Zotero collection "NPCs"
+- [ ] **Rewrite AI/ML Explainer**
+  - Make math section beginner-friendly
+  - Add analogies and visual explanations
+  - Run self-critique loop
+  - Focus on connections between concepts
 
-- [ ] **Domain 7: Worldbuilding Theory**
-  - Search for Wolf "Building Imaginary Worlds" (298 citations)
-  - Search for Jenkins "Convergence Culture" (3.5k citations)
-  - Add to Zotero collection "Worldbuilding"
+- [ ] **Run Critique Loop**
+  - Critique all Domain 8 subdomains
+  - Revise based on feedback
 
-### Priority 2: AI/ML Foundations
+- [ ] **Update Methodology**
+  - Add discovered domains (8d, 8f, 8g)
+  - Update paper counts
 
-- [ ] **Domain 1: Language Models**
-  - Search for Vaswani "Attention Is All You Need" (158k citations)
-  - Search for Brown "GPT-3" (51k citations)
+- [ ] **German Translations**
+  - Translate polished methodology
+  - Translate polished AI/ML explainer
 
-- [ ] **Domain 3: Text-to-Image**
-  - Search for Rombach "Latent Diffusion" (21k citations)
-  - Search for Radford "CLIP" (40k citations)
+## Documents Created
 
-- [ ] **Domain 4: 3D Generation**
-  - Search for Mildenhall "NeRF" (~10k citations)
-  - Search for Kerbl "3D Gaussian Splatting" (6k citations)
-  - Search for Poole "DreamFusion" (3k citations)
+### Research Summaries
+- `drafts/domain_1_llms_transformers.md`
+- `drafts/domain_2a_pcg_foundations.md`
+- `drafts/domain_2b_pcg_ml.md`
+- `drafts/domain_3_text_to_image_video.md`
+- `drafts/domain_4_3d_generation.md`
+- `drafts/domain_5_npcs_agents.md`
+- `drafts/domain_6_generative_worlds.md`
+- `drafts/domain_7_worldbuilding.md`
+- `drafts/domain_8_exploratory.md`
+- `drafts/domain_8b_audio_generation.md`
+- `drafts/domain_8c_quest_dialogue.md`
+- `drafts/domain_8d_multi_agent_systems.md`
+- `drafts/domain_8e_auto_rigging.md`
+- `drafts/domain_8f_houdini_ml.md`
+- `drafts/domain_8g_ue5_pcg_ml.md`
 
-### Priority 3: Frontier Research
+### Thesis Support Documents
+- `drafts/methodology_literature_review.md`
+- `drafts/ai_ml_foundations_explainer.md`
 
-- [ ] **Domain 6: Generative Interactive Worlds**
-  - Search for Bruce "Genie" (341 citations)
-  - Search for GameNGen (152 citations)
+### BibTeX Exports
+- `data/exports/domain_*.bib` (all domains)
 
-## Analysis
+## Setup (Completed)
 
-- [ ] Run notebook 01: Multi-database search overview
-- [ ] Run notebook 02: Citation network analysis for key papers
-- [ ] Run notebook 03: Bibliometric visualizations with LitStudy
-- [ ] Run notebook 04: Topic discovery across domains
+- [x] Zotero MCP configured
+- [x] GitHub MCP configured
+- [x] Science MCP configured (arXiv + OpenAlex)
+- [x] Papers MCP configured (arXiv, PubMed, bioRxiv)
+- [x] Thesis context: context/thesis-vision.md
+- [x] CLAUDE.md updated with autonomous behavior rules
 
-## Export
+## Paper Counts Summary
 
-- [ ] Export BibTeX for all new papers
-- [ ] Import to Zotero via Better BibTeX
-- [ ] Update RESEARCH_STATUS.md with progress
+| Domain | Papers |
+|--------|--------|
+| 1: LLMs | 11 |
+| 2a: PCG Foundations | 11 |
+| 2b: PCG + AI/ML | 14 |
+| 3: Text-to-Image/Video | 17 |
+| 4: 3D Generation | 8 |
+| 5: NPCs & Agents | 14 |
+| 6: Generative Worlds | 9 |
+| 7: Worldbuilding | 12 |
+| 8 (exploratory) | 11 |
+| 8b: Audio | 10 |
+| 8c: Quest/Dialogue | 11 |
+| 8d: Multi-Agent | 8 |
+| 8e: Auto-Rigging | 8 |
+| 8f: Houdini + ML | 10 |
+| 8g: UE5 + ML | 11 |
+| **Total** | **~155** |

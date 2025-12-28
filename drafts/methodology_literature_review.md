@@ -41,24 +41,24 @@ Based on the researcher's existing knowledge of game development and AI tools, a
 
 ### 2.2 Discovered Domains
 
-The AI assistant was explicitly instructed to identify research areas the human researcher might not have considered. Through systematic exploration of citation networks and related work sections, three additional subdomains emerged:
+The AI assistant was explicitly instructed to identify research areas the human researcher might not have considered. Through systematic exploration of citation networks and related work sections, seven additional subdomains emerged:
 
 | Domain | Focus Area | Discovery Method |
 |--------|------------|------------------|
-| **8a: Animation & Motion** | Procedural animation, motion matching | Citation network from NPC papers |
+| **8a: Animation & Rigging** | Neural animation, motion matching, auto-rigging | Citation network from NPC papers + rigging gap |
 | **8b: Audio Generation** | Music, voice, sound effects | Gap analysis during critique loop |
 | **8c: Quest & Dialogue** | Narrative generation, dialogue systems | Cross-reference from Domain 5 |
+| **8d: Multi-Agent Systems** | ChatDev, MetaGPT, autonomous dev agents | AI development workflow research |
+| **8f: Houdini + ML** | MLOPS, synthetic data, terrain ML | Industry tool documentation + gap analysis |
+| **8g: UE5 + ML/PCG** | NNE, ML Deformer, PCG Framework, Convai | Engine documentation + version tracking |
 
 Additional research threads identified but not fully explored:
 
 | Thread | Description | Status |
 |--------|-------------|--------|
-| **Multi-Agent Systems** | ChatDev, MetaGPT, AutoGPT | Papers identified, domain pending |
-| **Auto-Rigging** | RigNet, HumanRig | Papers identified, domain pending |
-| **Style Consistency** | LoRA, DreamBooth, ConsisLoRA | Papers identified, domain pending |
-| **AI Localization** | LLM-based game translation | Papers identified, domain pending |
-| **Houdini + ML** | HIVEai, MLOPS, synthetic data | Industry tools identified |
-| **UE5 PCG Framework** | Engine-specific procedural tools | Documentation reviewed |
+| **Style Consistency** | LoRA, DreamBooth, ConsisLoRA | Papers identified, covered in Domain 3 |
+| **AI Localization** | LLM-based game translation | Papers identified, future work |
+| **Video Generation** | Sora, Runway, video diffusion | Covered partially in Domain 3 |
 
 ---
 
@@ -196,15 +196,18 @@ For each domain summary:
 | 1: LLMs & Transformers | 11 | 4 | 3 | 2 | 2 |
 | 2a: PCG Foundations | 11 | 4 | 1 | 3 | 3 |
 | 2b: PCG + AI/ML | 14 | 2 | 4 | 5 | 3 |
-| 3: Text-to-Image | 10 | 3 | 4 | 2 | 1 |
+| 3: Text-to-Image/Video | 17 | 3 | 5 | 5 | 4 |
 | 4: 3D Generation | 8 | 2 | 3 | 2 | 1 |
 | 5: NPCs & Agents | 14 | 3 | 4 | 4 | 3 |
 | 6: Generative Worlds | 9 | 2 | 3 | 2 | 2 |
 | 7: Worldbuilding Theory | 12 | 2 | 3 | 4 | 3 |
-| 8a: Animation & Motion | 11 | 2 | 4 | 3 | 2 |
+| 8a: Animation & Rigging | 20 | 3 | 5 | 7 | 5 |
 | 8b: Audio Generation | 10 | 1 | 3 | 4 | 2 |
 | 8c: Quest & Dialogue | 11 | 1 | 3 | 4 | 3 |
-| **Total** | **121** | **26** | **35** | **35** | **25** |
+| 8d: Multi-Agent Systems | 8 | 1 | 2 | 3 | 2 |
+| 8f: Houdini + ML | 10 | 0 | 2 | 4 | 4 |
+| 8g: UE5 + ML/PCG | 15 | 0 | 1 | 3 | 11 |
+| **Total** | **~160** | **28** | **42** | **52** | **48** |
 
 ### 6.2 Temporal Distribution
 
@@ -259,14 +262,20 @@ master-thesis-literature-review/
 │   ├── domain_1_llms_transformers.md
 │   ├── domain_2a_pcg_foundations.md
 │   ├── domain_2b_pcg_ml.md
-│   ├── domain_3_text_to_image.md
+│   ├── domain_3_text_to_image_video.md
 │   ├── domain_4_3d_generation.md
 │   ├── domain_5_npcs_agents.md
 │   ├── domain_6_generative_worlds.md
 │   ├── domain_7_worldbuilding.md
 │   ├── domain_8_exploratory.md
+│   ├── domain_8a_animation_rigging.md
 │   ├── domain_8b_audio_generation.md
-│   └── domain_8c_quest_dialogue.md
+│   ├── domain_8c_quest_dialogue.md
+│   ├── domain_8d_multi_agent_systems.md
+│   ├── domain_8f_houdini_ml.md
+│   ├── domain_8g_ue5_pcg_ml.md
+│   ├── methodology_literature_review.md
+│   └── ai_ml_foundations_explainer.md
 └── data/exports/
     └── domain_*.bib        # BibTeX citations per domain
 ```
@@ -275,6 +284,13 @@ master-thesis-literature-review/
 
 ## 9. Conclusion
 
-This AI-assisted methodology enabled comprehensive cross-domain literature discovery that would be impractical through manual search alone. The combination of human domain expertise (initial domain structure, relevance filtering) with AI capabilities (citation network traversal, cross-domain connection discovery, iterative refinement) produced a literature foundation spanning 121 papers across 11 domains.
+This AI-assisted methodology enabled comprehensive cross-domain literature discovery that would be impractical through manual search alone. The combination of human domain expertise (initial domain structure, relevance filtering) with AI capabilities (citation network traversal, cross-domain connection discovery, iterative refinement) produced a literature foundation spanning approximately 160 papers across 15 domains.
 
 The approach demonstrates a model for AI-augmented academic research: the human researcher maintains intellectual direction and quality control while the AI assistant handles search execution, organization, and systematic coverage verification.
+
+### 9.1 Key Observations
+
+1. **Critique loops are essential**: The automated critique process identified significant gaps in several domains, particularly missing foundational papers and structural issues
+2. **Industry vs. academic tension**: Some domains (8f: Houdini, 8g: UE5) have limited academic literature but significant industry documentation, requiring methodological flexibility
+3. **Domain boundaries are fluid**: Research on NPCs (Domain 5) overlaps with Quest/Dialogue (8c) and Multi-Agent Systems (8d), requiring cross-referencing
+4. **Tier 4 papers dominate engine-specific domains**: UE5 and Houdini research is primarily recent industry documentation rather than peer-reviewed papers

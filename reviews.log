@@ -441,3 +441,126 @@ Recommend running Google Scholar verification pass.
 *Generated: 2025-12-28*
 *Reviewer: Claude Opus 4.5 Thesis Critique Agent*
 
+
+=== CRITIQUE LOOP: December 28, 2025 ===
+
+## Domain 8d: Multi-Agent Systems
+**Score: 2.2/5 - Needs Significant Revision**
+
+### Key Issues:
+1. **Confused Focus** - Conflates development agents (ChatDev) with in-game agents (NPCs)
+2. **Missing Foundational Papers** - Toolformer, Generative Agents cross-ref, LangGraph
+3. **Temporal Imbalance** - All 2023, missing 2022 foundations
+4. **Game Dev Section Underdeveloped** - Only 2 papers in core section
+5. **Speculative Content** - Workflow diagram and timeline not grounded in citations
+
+### Recommendations:
+- Decide purpose: dev tools OR in-game agents
+- Add Toolformer, AgentBench, SWE-Agent papers
+- Expand game-specific research (GDC/AIIDE/FDG papers)
+- Label speculative diagrams as "proposed"
+- Address thesis question directly: does this save time for solo devs?
+
+
+## Domain 8a: Animation & Rigging
+**Score: 6.8/10 - Good foundation, needs expansion**
+
+### Key Issues:
+1. **Missing Creature Animation** - No quadruped, dragon, or multi-limbed creatures
+2. **Missing IK Research** - Essential for foot placement, combat
+3. **Missing Foundational Papers** - Zhang 2018 (quadrupeds), Starke 2019 (NSM), Starke 2020 (Local Motion Phases), Peng 2022 (ASE)
+4. **No Practical Challenges Section** - SMPL to game skeleton, runtime constraints
+
+### Priority Additions:
+- Zhang 2018 Mode-Adaptive NNs (~200 citations)
+- Starke 2019 Neural State Machine (~300 citations)
+- Starke 2020 Local Motion Phases (~200 citations)
+- Peng 2022 ASE (~200 citations)
+- Add non-humanoid/creature section
+
+---
+
+## Domain 8b: Audio Generation
+**Score: C+ - Missing foundations, tool-focused**
+
+### Key Issues:
+1. **Missing WaveNet** (~15k citations) - Foundation of neural audio
+2. **Missing Tacotron** (~4k citations) - Foundation of TTS
+3. **Missing Jukebox** (~1.5k citations) - First serious music model
+4. **No Game Audio Specifics** - Adaptive music, spatial audio, procedural audio
+5. **Reads like tool catalog** - Not a literature review
+
+### Priority Additions:
+- WaveNet 2016
+- Tacotron 2017
+- HiFi-GAN 2020
+- AudioLM 2023
+- Collins "Game Sound" textbook
+
+---
+
+## Domain 8c: Quest & Dialogue
+**Score: C+ - Citation methodology failures**
+
+### Critical Issues:
+1. **EMNLP 2025 citation impossible** - Future conference, must remove
+2. **Missing foundational papers** - Riedl & Young, Cavazza, Murray, Mateas
+3. **Facade duplication** - Also in Domain 5
+4. **No tier labels** - Violates CLAUDE.md methodology
+5. **Missing dialogue tree vs LLM tradeoffs**
+
+### Priority Additions:
+- Riedl "Narrative Planning" (~800 citations)
+- Murray "Hamlet on the Holodeck" (~5k citations)
+- Doran & Parberry procedural quests (~200 citations)
+- Add tier classification to all papers
+
+---
+
+## Domain 8f: Houdini + ML
+**Score: 3/10 - CRITICAL - Requires complete rewrite**
+
+### Fatal Flaw: ZERO academic citations
+- Document is product feature catalog, not literature review
+- Sections D and E are placeholder hand-waving
+- No terrain generation papers
+- No simulation acceleration papers
+
+### Priority Actions:
+- Search for academic papers on neural terrain, learned simulation
+- Add tier classification
+- Rewrite from scratch following Domain 2a template
+- Must include: terrain ML papers, NVIDIA research papers, USD workflow papers
+
+---
+
+## Domain 8g: UE5 + ML/PCG
+**Score: C+ - Documentation masquerading as research**
+
+### Key Issues:
+1. **World Partition severely underexplored** - Core open-world feature
+2. **Nanite/Lumen superficial** - Only mentioned in passing
+3. **Control Rig missing** - Promised but not covered
+4. **No academic citations** - Only Epic docs
+5. **Missing GAS, State Tree, Smart Objects**
+
+### Priority Additions:
+- Add World Partition section with streaming, HLOD, data layers
+- Expand Nanite/Lumen coverage
+- Add Control Rig section
+- Find GDC Vault talks, Epic SIGGRAPH presentations
+- Add "Indie Feasibility" analysis
+
+---
+
+## CRITIQUE LOOP SUMMARY
+
+| Domain | Score | Priority Action |
+|--------|-------|-----------------|
+| 8a Animation | 6.8/10 | Add creature animation, Starke papers |
+| 8b Audio | C+ | Add foundational papers, game audio section |
+| 8c Quest | C+ | Remove EMNLP 2025, add tier labels |
+| 8d Multi-Agent | 2.2/5 | Clarify purpose, add Toolformer |
+| 8f Houdini | 3/10 | **Complete rewrite needed** |
+| 8g UE5 | C+ | Add World Partition, academic sources |
+

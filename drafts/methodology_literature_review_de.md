@@ -41,24 +41,24 @@ Basierend auf dem bestehenden Wissen der Forscherin über Spieleentwicklung und 
 
 ### 2.2 Entdeckte Domänen
 
-Der KI-Assistent wurde ausdrücklich angewiesen, Forschungsbereiche zu identifizieren, die die menschliche Forscherin möglicherweise nicht berücksichtigt hätte. Durch systematische Erkundung von Zitationsnetzwerken und verwandten Arbeitsabschnitten entstanden drei zusätzliche Unterdomänen:
+Der KI-Assistent wurde ausdrücklich angewiesen, Forschungsbereiche zu identifizieren, die die menschliche Forscherin möglicherweise nicht berücksichtigt hätte. Durch systematische Erkundung von Zitationsnetzwerken und verwandten Arbeitsabschnitten entstanden sieben zusätzliche Unterdomänen:
 
 | Domäne | Fokusbereich | Entdeckungsmethode |
 |--------|--------------|-------------------|
-| **8a: Animation & Bewegung** | Prozedurale Animation, Motion Matching | Zitationsnetzwerk aus NPC-Papieren |
+| **8a: Animation & Rigging** | Neuronale Animation, Motion Matching, Auto-Rigging | Zitationsnetzwerk + Lückenanalyse |
 | **8b: Audio-Generierung** | Musik, Sprache, Soundeffekte | Lückenanalyse während des Kritikdurchlaufs |
 | **8c: Quest & Dialog** | Narrativgenerierung, Dialogsysteme | Querverweise aus Domäne 5 |
+| **8d: Multi-Agenten-Systeme** | ChatDev, MetaGPT, autonome Entwicklungsagenten | KI-Entwicklungs-Workflow-Recherche |
+| **8f: Houdini + ML** | MLOPS, synthetische Daten, Terrain-ML | Industrietool-Dokumentation + Lückenanalyse |
+| **8g: UE5 + ML/PCG** | NNE, ML Deformer, PCG Framework, Convai | Engine-Dokumentation + Versionsverfolgung |
 
 Zusätzlich identifizierte, aber nicht vollständig erforschte Forschungsstränge:
 
 | Strang | Beschreibung | Status |
 |--------|--------------|--------|
-| **Multi-Agenten-Systeme** | ChatDev, MetaGPT, AutoGPT | Paper identifiziert, Domäne ausstehend |
-| **Auto-Rigging** | RigNet, HumanRig | Paper identifiziert, Domäne ausstehend |
-| **Stilkonsistenz** | LoRA, DreamBooth, ConsisLoRA | Paper identifiziert, Domäne ausstehend |
-| **KI-Lokalisierung** | LLM-basierte Spielübersetzung | Aufkommende Forschung |
-| **Houdini + ML** | HIVEai, MLOPS, NVIDIA | Industriewerkzeuge identifiziert |
-| **UE5 PCG-Framework** | Engine-native prozedurale Werkzeuge | Dokumentation geprüft |
+| **Stilkonsistenz** | LoRA, DreamBooth, ConsisLoRA | In Domäne 3 behandelt |
+| **KI-Lokalisierung** | LLM-basierte Spielübersetzung | Zukünftige Arbeit |
+| **Videogenerierung** | Sora, Runway, Video-Diffusion | Teilweise in Domäne 3 behandelt |
 
 ---
 
@@ -196,15 +196,18 @@ Für jede Domänenzusammenfassung:
 | 1: LLMs & Transformer | 11 | 4 | 3 | 2 | 2 |
 | 2a: PCG-Grundlagen | 11 | 4 | 1 | 3 | 3 |
 | 2b: PCG + KI/ML | 14 | 2 | 4 | 5 | 3 |
-| 3: Text-zu-Bild/Video | 17 | 4 | 4 | 5 | 4 |
+| 3: Text-zu-Bild/Video | 17 | 3 | 5 | 5 | 4 |
 | 4: 3D-Generierung | 8 | 2 | 3 | 2 | 1 |
 | 5: NPCs & Agenten | 14 | 3 | 4 | 4 | 3 |
 | 6: Generative Welten | 9 | 2 | 3 | 2 | 2 |
 | 7: Weltenbau-Theorie | 12 | 2 | 3 | 4 | 3 |
-| 8a: Animation & Bewegung | 11 | 2 | 4 | 3 | 2 |
+| 8a: Animation & Rigging | 20 | 3 | 5 | 7 | 5 |
 | 8b: Audio-Generierung | 10 | 1 | 3 | 4 | 2 |
 | 8c: Quest & Dialog | 11 | 1 | 3 | 4 | 3 |
-| **Gesamt** | **128** | **27** | **35** | **38** | **28** |
+| 8d: Multi-Agenten-Systeme | 8 | 1 | 2 | 3 | 2 |
+| 8f: Houdini + ML | 10 | 0 | 2 | 4 | 4 |
+| 8g: UE5 + ML/PCG | 15 | 0 | 1 | 3 | 11 |
+| **Gesamt** | **~160** | **28** | **42** | **52** | **48** |
 
 ### 6.2 Zeitliche Verteilung
 
@@ -268,6 +271,13 @@ master-thesis-literature-review/
 
 ## 9. Schlussfolgerung
 
-Diese KI-gestützte Methodik ermöglichte eine umfassende domänenübergreifende Literaturentdeckung, die durch manuelle Suche allein unpraktisch wäre. Die Kombination aus menschlicher Domänenexpertise (initiale Domänenstruktur, Relevanzfilterung) mit KI-Fähigkeiten (Zitationsnetzwerk-Traversierung, domänenübergreifende Verbindungsentdeckung, iterative Verfeinerung) produzierte eine Literaturbasis von 128 Papers über 15 Domänen.
+Diese KI-gestützte Methodik ermöglichte eine umfassende domänenübergreifende Literaturentdeckung, die durch manuelle Suche allein unpraktisch wäre. Die Kombination aus menschlicher Domänenexpertise (initiale Domänenstruktur, Relevanzfilterung) mit KI-Fähigkeiten (Zitationsnetzwerk-Traversierung, domänenübergreifende Verbindungsentdeckung, iterative Verfeinerung) produzierte eine Literaturbasis von etwa 160 Papers über 15 Domänen.
 
 Der Ansatz demonstriert ein Modell für KI-augmentierte akademische Forschung: Die menschliche Forscherin behält die intellektuelle Richtung und Qualitätskontrolle bei, während der KI-Assistent Suchausführung, Organisation und systematische Abdeckungsverifikation übernimmt.
+
+### 9.1 Wichtige Beobachtungen
+
+1. **Kritikschleifen sind essenziell**: Der automatisierte Kritikprozess identifizierte signifikante Lücken in mehreren Domänen
+2. **Industrie vs. Akademie Spannung**: Einige Domänen (8f: Houdini, 8g: UE5) haben begrenzte akademische Literatur aber umfangreiche Industriedokumentation
+3. **Domänengrenzen sind fließend**: Forschung zu NPCs (Domäne 5) überschneidet sich mit Quest/Dialog (8c) und Multi-Agenten-Systemen (8d)
+4. **Stufe 4 dominiert engine-spezifische Domänen**: UE5 und Houdini-Forschung ist primär aktuelle Industriedokumentation statt Peer-Review-Paper
