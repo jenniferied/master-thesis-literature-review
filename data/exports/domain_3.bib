@@ -1,8 +1,9 @@
-% Domain 3: Text-to-Image Generation
-% Citation counts from Semantic Scholar/Web Search, December 2025
-% NOTE: Verify with Google Scholar when rate limit resets
+% Domain 3: Text-to-Image and Video Generation
+% Expanded with Style Consistency and Video - December 2025
 
-% === TIER 1: Mega-Foundational (>10,000 citations) ===
+% === SECTION A: FOUNDATION PAPERS ===
+
+% --- TIER 1: Mega-Foundational (>10,000 citations) ---
 
 @inproceedings{radford2021learning,
   title={Learning Transferable Visual Models From Natural Language Supervision},
@@ -12,7 +13,7 @@
   year={2021},
   organization={PMLR},
   url={https://arxiv.org/abs/2103.00020},
-  note={40,352 citations - CLIP: Foundation for text-image alignment}
+  note={~40,000 citations - CLIP: Foundation for text-image alignment}
 }
 
 @inproceedings{ho2020denoising,
@@ -24,7 +25,7 @@
   year={2020},
   organization={NeurIPS},
   url={https://arxiv.org/abs/2006.11239},
-  note={24,884 citations - THE foundational diffusion paper}
+  note={~25,000 citations - THE foundational diffusion paper}
 }
 
 @inproceedings{rombach2022high,
@@ -34,7 +35,7 @@
   pages={10684--10695},
   year={2022},
   doi={10.1109/CVPR52688.2022.01042},
-  note={20,519 citations - Stable Diffusion foundation, latent space diffusion}
+  note={~20,000 citations - Stable Diffusion foundation, latent space diffusion}
 }
 
 @inproceedings{karras2019style,
@@ -47,7 +48,7 @@
   note={~15,000 citations - StyleGAN: Pre-diffusion state-of-the-art}
 }
 
-% === TIER 2: Major Foundational (1,000-10,000 citations) ===
+% --- TIER 2: Major Foundational (1,000-10,000 citations) ---
 
 @article{ramesh2022hierarchical,
   title={Hierarchical Text-Conditional Image Generation with {CLIP} Latents},
@@ -55,19 +56,18 @@
   journal={arXiv preprint arXiv:2204.06125},
   year={2022},
   url={https://arxiv.org/abs/2204.06125},
-  note={8,178 citations - DALL-E 2: CLIP + diffusion two-stage approach}
+  note={~8,000 citations - DALL-E 2}
 }
 
 @inproceedings{saharia2022photorealistic,
   title={Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding},
-  author={Saharia, Chitwan and Chan, William and Saxena, Saurabh and Li, Lala and Whang, Jay and Denton, Emily and Ghasemipour, Seyed Kamyar Seyed and Gontijo-Lopes, Raphael and Karagol Ayan, Burcu and Salimans, Tim and others},
+  author={Saharia, Chitwan and Chan, William and Saxena, Saurabh and others},
   booktitle={Advances in Neural Information Processing Systems},
   volume={35},
-  pages={36479--36494},
   year={2022},
   organization={NeurIPS},
   url={https://arxiv.org/abs/2205.11487},
-  note={6,515 citations - Imagen: Emphasis on language understanding with T5}
+  note={~6,500 citations - Imagen}
 }
 
 @inproceedings{zhang2023adding,
@@ -77,36 +77,99 @@
   pages={3836--3847},
   year={2023},
   url={https://arxiv.org/abs/2302.05543},
-  note={5,390 citations - ControlNet: Spatial control over diffusion}
-}
-
-@article{ho2022classifier,
-  title={Classifier-Free Diffusion Guidance},
-  author={Ho, Jonathan and Salimans, Tim},
-  journal={arXiv preprint arXiv:2207.12598},
-  year={2022},
-  url={https://arxiv.org/abs/2207.12598},
-  note={~4,000 citations - CFG scale for fidelity/diversity tradeoff}
+  note={~5,400 citations - ControlNet}
 }
 
 @article{podell2023sdxl,
   title={{SDXL}: Improving Latent Diffusion Models for High-Resolution Image Synthesis},
-  author={Podell, Dustin and English, Zion and Lacey, Kyle and Blattmann, Andreas and Dockhorn, Tim and M{\"u}ller, Jonas and Penna, Joe and Rombach, Robin},
+  author={Podell, Dustin and English, Zion and Lacey, Kyle and others},
   journal={arXiv preprint arXiv:2307.01952},
   year={2023},
   url={https://arxiv.org/abs/2307.01952},
-  note={3,665 citations - Current practical standard for open-source text-to-image}
+  note={~3,700 citations - SDXL}
 }
 
-% === TIER 3: Field-Defining (100-1,000 citations) ===
+% === SECTION B: STYLE CONSISTENCY & PERSONALIZATION ===
 
-@inproceedings{nichol2021improved,
-  title={Improved Denoising Diffusion Probabilistic Models},
-  author={Nichol, Alexander Quinn and Dhariwal, Prafulla},
-  booktitle={International Conference on Machine Learning (ICML)},
-  pages={8162--8171},
-  year={2021},
-  organization={PMLR},
-  url={https://arxiv.org/abs/2102.09672},
-  note={~3,000 citations - Key improvements to DDPM training}
+@inproceedings{hu2021lora,
+  title={{LoRA}: Low-Rank Adaptation of Large Language Models},
+  author={Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2022},
+  url={https://arxiv.org/abs/2106.09685},
+  note={~15,000 citations - Efficient fine-tuning, widely used for diffusion}
+}
+
+@inproceedings{ruiz2023dreambooth,
+  title={{DreamBooth}: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation},
+  author={Ruiz, Nataniel and Li, Yuanzhen and Jampani, Varun and Pritch, Yael and Rubinstein, Michael and Aberman, Kfir},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages={22500--22510},
+  year={2023},
+  url={https://arxiv.org/abs/2208.12242},
+  note={~3,500 citations - Subject-specific personalization}
+}
+
+@inproceedings{gal2022textual,
+  title={An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion},
+  author={Gal, Rinon and Alaluf, Yuval and Atzmon, Yuval and Patashnik, Or and Bermano, Amit H. and Chechik, Gal and Cohen-Or, Daniel},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2023},
+  url={https://arxiv.org/abs/2208.01618},
+  note={~2,000 citations - Concept learning as embeddings}
+}
+
+@article{ye2023ipadapter,
+  title={{IP-Adapter}: Text Compatible Image Prompt Adapter for Text-to-Image Diffusion Models},
+  author={Ye, Hu and Zhang, Jun and Liu, Sibo and Han, Xiao and Yang, Wei},
+  journal={arXiv preprint arXiv:2308.06721},
+  year={2023},
+  url={https://arxiv.org/abs/2308.06721},
+  note={~500 citations - Image-guided generation with decoupled cross-attention}
+}
+
+% === SECTION C: TEXT-TO-VIDEO GENERATION ===
+
+@article{singer2022makeavideo,
+  title={Make-A-Video: Text-to-Video Generation without Text-Video Data},
+  author={Singer, Uriel and Polyak, Adam and Hayes, Thomas and Yin, Xi and An, Jie and Zhang, Songyang and Hu, Qiyuan and Yang, Harry and Ashual, Oron and Gafni, Oran and Parikh, Devi and Gupta, Sonal and Taigman, Yaniv},
+  journal={arXiv preprint arXiv:2209.14792},
+  year={2022},
+  url={https://arxiv.org/abs/2209.14792},
+  note={~1,500 citations - Pioneering text-to-video, Meta AI}
+}
+
+@misc{openai2024sora,
+  title={Sora: Video Generation Models as World Simulators},
+  author={{OpenAI}},
+  year={2024},
+  url={https://openai.com/research/video-generation-models-as-world-simulators},
+  note={Technical Report - State-of-the-art, 60+ second coherent video}
+}
+
+@misc{runway2023gen2,
+  title={Gen-2: Multimodal AI System for Video Generation},
+  author={{Runway}},
+  year={2023},
+  url={https://runwayml.com/research/gen-2},
+  note={Commercial system - Practical text-to-video tool}
+}
+
+@article{blattmann2023stable,
+  title={Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets},
+  author={Blattmann, Andreas and Dockhorn, Tim and Kulal, Sumith and Mendelevitch, Daniel and Kilian, Maciej and Lorber, Dominik and Levi, Yam and English, Zion and Voleti, Vikram and Lucks, Adam and Ramasamy, Varun and Rombach, Robin},
+  journal={arXiv preprint arXiv:2311.15127},
+  year={2023},
+  url={https://arxiv.org/abs/2311.15127},
+  note={~800 citations - Open-source video diffusion, Stability AI}
+}
+
+@inproceedings{ho2022video,
+  title={Video Diffusion Models},
+  author={Ho, Jonathan and Salimans, Tim and Gritsenko, Alexey and Chan, William and Norouzi, Mohammad and Fleet, David J.},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  volume={35},
+  year={2022},
+  url={https://arxiv.org/abs/2204.03458},
+  note={~1,200 citations - Foundational video diffusion theory}
 }
