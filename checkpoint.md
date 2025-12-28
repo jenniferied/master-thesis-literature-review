@@ -24,13 +24,13 @@ Last Updated: 2025-12-28T22:30:00
 ---
 
 ## Session Status
-- **Phase:** Domains 2a & 2b COMPLETE, continuing to Domain 5
-- **Next Action:** Complete Domain 5 (NPCs & Believable Agents)
+- **Phase:** ALL DOMAINS COMPLETE (1, 2a, 2b, 3, 4, 5, 6, 7, 8)
+- **Next Action:** Final review and commit
 
 ## Domain Priority Order
 1. **2a: PCG Foundations** - COMPLETE (11 papers, tiered methodology applied)
 2. **2b: PCG + AI/ML** - COMPLETE (14 papers, tiered methodology applied)
-3. **5: NPCs & Believable Agents** - Pending
+3. **5: NPCs & Believable Agents** - COMPLETE (14 papers, tiered methodology applied)
 4. **7: Worldbuilding Theory** - Pending
 5. **1: LLMs & Transformers** - Pending (Foundation, not skipped!)
 6. **3: Text-to-Image** - Pending
@@ -39,15 +39,15 @@ Last Updated: 2025-12-28T22:30:00
 9. **8: Exploratory** - Pending (Animation, Houdini, unexplored)
 
 ## Completed Domains
-- [ ] Domain 1: LLMs & Transformers
+- [x] Domain 1: LLMs & Transformers (11 papers, tiered methodology applied)
 - [x] Domain 2a: PCG Foundations (11 papers, tiered methodology applied)
 - [x] Domain 2b: PCG + AI/ML (14 papers, tiered methodology applied)
-- [ ] Domain 3: Text-to-Image
-- [ ] Domain 4: 3D Generation
-- [ ] Domain 5: NPCs & Believable Agents
-- [ ] Domain 6: Generative Worlds
-- [ ] Domain 7: Worldbuilding Theory
-- [ ] Domain 8: Exploratory
+- [x] Domain 3: Text-to-Image (10 papers, tiered methodology applied)
+- [x] Domain 4: 3D Generation (8 papers, tiered methodology applied)
+- [x] Domain 5: NPCs & Believable Agents (14 papers, tiered methodology applied)
+- [x] Domain 6: Generative Worlds (9 papers, tiered methodology applied)
+- [x] Domain 7: Worldbuilding Theory (12 papers, tiered methodology applied)
+- [x] Domain 8: Exploratory (11 papers/tools, tiered methodology applied)
 
 ## Infrastructure Completed
 - [x] Zotero MCP configured (API key + User ID: 13820503)
@@ -90,9 +90,24 @@ Last Updated: 2025-12-28T22:30:00
 
 ## Files Created
 - `context/thesis-vision.md` - Thesis abstract and Relics project
-- `drafts/domain_2a_pcg_foundations.md` - Draft summary (needs revision)
-- `data/searches/domain_2a_2025-12-28.json` - Paper metadata
-- `data/exports/domain_2a.bib` - BibTeX for Zotero
+- `drafts/domain_2a_pcg_foundations.md` - PCG Foundations (11 papers)
+- `drafts/domain_2b_pcg_ml.md` - PCG + AI/ML (14 papers)
+- `drafts/domain_5_npcs_agents.md` - NPCs & Believable Agents (14 papers)
+- `drafts/domain_7_worldbuilding.md` - Worldbuilding Theory (12 papers)
+- `data/exports/domain_2a.bib` - BibTeX for Domain 2a
+- `data/exports/domain_2b.bib` - BibTeX for Domain 2b
+- `data/exports/domain_5.bib` - BibTeX for Domain 5
+- `data/exports/domain_7.bib` - BibTeX for Domain 7
+- `drafts/domain_1_llms_transformers.md` - LLMs & Transformers (11 papers)
+- `data/exports/domain_1.bib` - BibTeX for Domain 1
+- `drafts/domain_3_text_to_image.md` - Text-to-Image (10 papers)
+- `data/exports/domain_3.bib` - BibTeX for Domain 3
+- `drafts/domain_4_3d_generation.md` - 3D Generation (8 papers)
+- `data/exports/domain_4.bib` - BibTeX for Domain 4
+- `drafts/domain_6_generative_worlds.md` - Generative Worlds (9 papers)
+- `data/exports/domain_6.bib` - BibTeX for Domain 6
+- `drafts/domain_8_exploratory.md` - Exploratory (11 papers/tools)
+- `data/exports/domain_8.bib` - BibTeX for Domain 8
 - `reviews.log` - Critique feedback
 
 ## MCPs Available After Restart
