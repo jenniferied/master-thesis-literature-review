@@ -11,6 +11,33 @@ Automated literature review system for master thesis:
 
 **Focus:** Investigating how AI and procedural generation can enable small teams (or solo developers) to create open-world RPG experiences that previously required large studios and massive budgets.
 
+**North Star:** Create "Relics" - a Skyrim-scale open-world dark fantasy RPG in the Shadow Realm, as a solo/small team using AI and procedural tools.
+
+## Autonomous Behavior Rules
+
+### Code Style & Rituals
+- Use `gh` CLI for all GitHub interactions
+- Commits follow Conventional Commits: `feat:`, `docs:`, `chore:`, `fix:`
+- Self-correction is mandatory before any PR is finalized
+
+### Autonomous Execution
+- You are authorized to install npm/pip packages if needed for data analysis
+- If a search query yields no results, pivot keywords and try 3 more times before marking as 'blocked'
+- Maintain `todo.md` in real-time
+- Update `checkpoint.md` after completing each domain
+- Commit progress after each domain completion
+
+### Checkpoint & Recovery
+- After each domain: write state to `checkpoint.md`
+- If context window fills: summarize to `checkpoint.md` and refresh
+- On session restart: read `checkpoint.md` first, resume from last incomplete domain
+
+### Self-Critique Loop
+- For each domain summary, spin up a critique subagent
+- Review for: bias, gaps, missing citations, logical coherence
+- Log critiques to `reviews.log`
+- Revise based on feedback before marking complete
+
 ## Research Domains (Priority Order)
 
 ### Domain 1: Language Models & Transformers (Foundation)
@@ -19,11 +46,17 @@ Automated literature review system for master thesis:
 - **Key papers:** Vaswani "Attention Is All You Need" (158k citations), Brown "GPT-3" (51k citations)
 - **Use for:** Understanding the foundation that enables all other AI tools
 
-### Domain 2: Procedural Content Generation
+### Domain 2a: PCG Foundations
 
-- **Key terms:** PCG, procedural generation, WFC, wave function collapse, search-based, machine learning PCG, PCGML
-- **Key papers:** Togelius "Search-Based PCG" (751 citations), Summerville "PCGML" (425 citations), Shaker PCG textbook
-- **Use for:** Terrain, level design, game content generation techniques
+- **Key terms:** PCG, procedural generation, WFC, wave function collapse, search-based, L-systems
+- **Key papers:** Togelius "Search-Based PCG" (751 citations), Shaker PCG textbook
+- **Use for:** Classic procedural generation theory and techniques
+
+### Domain 2b: PCG + AI/ML
+
+- **Key terms:** PCGML, machine learning PCG, neural terrain, deep learning level generation, WFC+ML
+- **Key papers:** Summerville "PCGML" (425 citations), neural terrain generation papers
+- **Use for:** AI-enhanced procedural generation, learned content generation
 
 ### Domain 3: Text-to-Image/Video
 
@@ -54,6 +87,16 @@ Automated literature review system for master thesis:
 - **Key terms:** worldbuilding, subcreation, transmedia, imaginary worlds, secondary worlds
 - **Key papers:** Wolf "Building Imaginary Worlds" (298 citations), Jenkins "Convergence Culture" (3.5k citations)
 - **Use for:** Theoretical foundation for worldbuilding practice
+
+### Domain 8: Exploratory / Unexplored Domains
+
+- **Key terms:** procedural animation, motion matching, learned locomotion, Audio2Face, ML muscle deformation, physics-based characters, Houdini ML, tileable textures, UE5 PCG, indie game dev AI
+- **Key papers:** To be discovered
+- **Use for:** Finding research strands not covered by domains 1-7, especially:
+  - Animation pipeline automation
+  - Houdini + machine learning integration
+  - NVIDIA research (Omniverse, Replicator, Isaac Sim)
+  - Indie/solo game development feasibility studies
 
 ## Available MCP Tools
 
