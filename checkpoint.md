@@ -47,7 +47,9 @@ Last Updated: 2025-12-28T22:30:00
 - [x] Domain 5: NPCs & Believable Agents (14 papers, tiered methodology applied)
 - [x] Domain 6: Generative Worlds (9 papers, tiered methodology applied)
 - [x] Domain 7: Worldbuilding Theory (12 papers, tiered methodology applied)
-- [x] Domain 8: Exploratory (11 papers/tools, tiered methodology applied)
+- [x] Domain 8a: Animation & Motion (11 papers/tools, tiered methodology applied)
+- [x] Domain 8b: Audio Generation (10 papers/tools, NEW)
+- [x] Domain 8c: Quest & Dialogue (11 papers, NEW)
 
 ## Infrastructure Completed
 - [x] Zotero MCP configured (API key + User ID: 13820503)
@@ -106,9 +108,13 @@ Last Updated: 2025-12-28T22:30:00
 - `data/exports/domain_4.bib` - BibTeX for Domain 4
 - `drafts/domain_6_generative_worlds.md` - Generative Worlds (9 papers)
 - `data/exports/domain_6.bib` - BibTeX for Domain 6
-- `drafts/domain_8_exploratory.md` - Exploratory (11 papers/tools)
-- `data/exports/domain_8.bib` - BibTeX for Domain 8
-- `reviews.log` - Critique feedback
+- `drafts/domain_8_exploratory.md` - Exploratory/Animation (11 papers/tools)
+- `data/exports/domain_8.bib` - BibTeX for Domain 8a
+- `drafts/domain_8b_audio_generation.md` - Audio Generation (10 papers/tools)
+- `data/exports/domain_8b.bib` - BibTeX for Domain 8b
+- `drafts/domain_8c_quest_dialogue.md` - Quest & Dialogue (11 papers)
+- `data/exports/domain_8c.bib` - BibTeX for Domain 8c
+- `reviews.log` - Comprehensive critique feedback
 
 ## MCPs Available After Restart
 ```
