@@ -13,7 +13,7 @@ Before starting the loop, ensure the environment is prepared:
 ## 2. The Master Protocol Prompt
 *Paste the following text into the Claude Code terminal to begin the autonomous loop:*
 
-> "Act as an Autonomous Research Engineer. Your objective is to conduct a deep-dive literature review on **[INSERT TOPIC]** and integrate the findings into this repository.
+> "Act as an Autonomous Research Engineer. Your objective is to conduct a deep-dive literature review on **AI-Assisted Worldbuilding for Independent Game Development: How AI and procedural generation can enable small teams to create open-world RPG experiences** and integrate the findings into this repository.
 >
 > ### Execution Strategy:
 > 1. **Establish Memory:** Create a `todo.md` file. Map out a 3-hour roadmap including discovery, synthesis, drafting, and peer-review stages.
