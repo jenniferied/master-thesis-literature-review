@@ -1,8 +1,12 @@
 # Methodik der Literaturrecherche
 
-## KI-gestutzte systematische Literaturentdeckung
+## Phase 1: KI-gestützte Scoping-Suche
 
-Diese Literaturrecherche verwendete eine neuartige Methodik: **KI-gestutzte systematische Suche** unter Verwendung von Claude Code (Anthropics Claude Opus 4.5) als Forschungspartner. Anstatt sich ausschliesslich auf traditionelle Datenbankabfragen zu verlassen, kombinierte dieser Ansatz menschliche Domänenexpertise mit KI-Fähigkeiten fur domänenübergreifende Entdeckung, Zitationsnetzwerkanalyse und iterative Verfeinerung.
+Dieses Dokument beschreibt, wie ich die erste Phase meiner Literaturrecherche durchgeführt habe — eine **Scoping-Suche**, die ein breites Netz über mehrere Forschungsdomänen auswirft. Ziel war nicht, jedes Paper im Detail zu lesen, sondern die Forschungslandschaft zu kartieren, bevor ich meinen Fokus eingrenzte.
+
+Ich verwendete eine neuartige Methodik: **KI-gestützte systematische Suche** unter Verwendung von Claude Code (Anthropics Claude Opus 4.5) als Forschungspartner. Dieser Ansatz kombinierte meine Domänenexpertise in der Spieleentwicklung mit KI-Fähigkeiten für domänenübergreifende Entdeckung, Zitationsnetzwerkanalyse und iterative Verfeinerung.
+
+**Hinweis:** Die ausführliche englische Version enthält detaillierte Erklärungen der technischen Einrichtung (Cursor IDE, Claude Code, MCP-Tools) und der Forschungslandschaft (arXiv, SIGGRAPH, NeurIPS).
 
 ---
 
@@ -205,9 +209,11 @@ Für jede Domänenzusammenfassung:
 | 8b: Audio-Generierung | 10 | 1 | 3 | 4 | 2 |
 | 8c: Quest & Dialog | 11 | 1 | 3 | 4 | 3 |
 | 8d: Multi-Agenten-Systeme | 8 | 1 | 2 | 3 | 2 |
-| 8f: Houdini + ML | 10 | 0 | 2 | 4 | 4 |
+| 8f: Houdini + ML | 14 | 5 | 2 | 2 | 5 |
 | 8g: UE5 + ML/PCG | 15 | 0 | 1 | 3 | 11 |
-| **Gesamt** | **~160** | **28** | **42** | **52** | **48** |
+| **Gesamt** | **~170** | **33** | **42** | **50** | **45** |
+
+**Hinweis:** Die Gesamtzahl umfasst ~150 akademische Papers und ~20 Industriedokumentationen.
 
 ### 6.2 Zeitliche Verteilung
 
@@ -269,11 +275,30 @@ master-thesis-literature-review/
 
 ---
 
-## 9. Schlussfolgerung
+## 9. Phase 1 abgeschlossen: Nächste Schritte
 
-Diese KI-gestützte Methodik ermöglichte eine umfassende domänenübergreifende Literaturentdeckung, die durch manuelle Suche allein unpraktisch wäre. Die Kombination aus menschlicher Domänenexpertise (initiale Domänenstruktur, Relevanzfilterung) mit KI-Fähigkeiten (Zitationsnetzwerk-Traversierung, domänenübergreifende Verbindungsentdeckung, iterative Verfeinerung) produzierte eine Literaturbasis von etwa 160 Papers über 15 Domänen.
+Diese Scoping-Suche repräsentiert **Phase 1** meines Literaturrecherche-Prozesses.
 
-Der Ansatz demonstriert ein Modell für KI-augmentierte akademische Forschung: Die menschliche Forscherin behält die intellektuelle Richtung und Qualitätskontrolle bei, während der KI-Assistent Suchausführung, Organisation und systematische Abdeckungsverifikation übernimmt.
+### Was ich erreicht habe
+
+- Breites Netz über 15 Forschungsdomänen ausgeworfen
+- Etwa 170 relevante Einträge identifiziert (150 akademische Papers, 20 technische Dokumente)
+- Forschungslandschaft der KI-gestützten Spieleentwicklung kartiert
+- Domänen entdeckt, die ich anfangs nicht berücksichtigt hatte (8a-8g)
+
+### Phase 2: Manuelle Überprüfung und Auswahl
+
+Die nächste Phase umfasst:
+1. **Manuelles Lesen**: Alle 170 Papers überfliegen
+2. **Zotero-Integration**: Ausgewählte Papers in meine Bibliothek importieren
+3. **Eingrenzung**: 60-80 Papers für die finale Thesis auswählen
+4. **Fokusauswahl**: 2-3 Domänen für tiefe Untersuchung wählen
+
+## 10. Schlussfolgerung
+
+Diese KI-gestützte Methodik ermöglichte eine umfassende domänenübergreifende Literaturentdeckung, die durch manuelle Suche allein unpraktisch wäre. Die Kombination aus menschlicher Domänenexpertise mit KI-Fähigkeiten (Zitationsnetzwerk-Traversierung, domänenübergreifende Verbindungsentdeckung, iterative Verfeinerung) produzierte eine Literaturbasis von etwa 170 Einträgen über 15 Domänen.
+
+Der Ansatz demonstriert ein Modell für KI-augmentierte akademische Forschung: Ich behalte die intellektuelle Richtung und Qualitätskontrolle bei, während der KI-Assistent Suchausführung, Organisation und systematische Abdeckungsverifikation übernimmt.
 
 ### 9.1 Wichtige Beobachtungen
 

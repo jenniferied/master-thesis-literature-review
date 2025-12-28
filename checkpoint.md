@@ -1,6 +1,6 @@
 # Literature Review Checkpoint
 
-Last Updated: 2025-12-28T23:55:00
+Last Updated: 2025-12-29T14:00:00
 
 ## THESIS INTENTION (North Star)
 
@@ -22,21 +22,23 @@ Last Updated: 2025-12-28T23:55:00
 ---
 
 ## Session Status
-- **Phase:** ALL DOMAINS COMPLETE - CRITIQUE LOOP FINISHED
-- **Next Action:** Review critique feedback, revise domains based on gaps identified
+- **Phase:** PHASE 1 COMPLETE - SCOPING SEARCH FINISHED
+- **Next Action:** Begin Phase 2 - Manual review, narrow to 60-80 papers, choose focus domains
 
-## Current Session Tasks
-1. [x] Update status files (checkpoint.md, README.md, todo.md)
-2. [x] Create Domain 8a: Animation & Rigging (merge + new papers) - 20 papers
-3. [x] Expand Domain 8g: UE5 + ML (roadmap, Convai, muscle deformation) - 15 features
-4. [x] Run critique loop on all Domain 8 subdomains - See reviews.log
-5. [x] Rewrite AI/ML Explainer for beginners - Major expansion with analogies
-6. [x] Update Methodology with discovered domains - 15 domains, ~160 papers
-7. [x] Update German translations - methodology_de.md updated
+## Current Session Tasks (Completed)
+1. [x] Rewrite methodology as "Phase 1: Scoping Search" with novice explanations
+2. [x] Add tech stack section (Cursor, Claude Code, MCP tools)
+3. [x] Add research landscape context (arXiv, SIGGRAPH, conferences)
+4. [x] Rewrite Domain 8f with academic citations (14 papers added)
+5. [x] Verify paper counts (~170 total, ~150 academic)
+6. [x] Update German translation
+7. [x] Update checkpoint and README
 
 ---
 
-## Completed Domains
+## Phase 1 Summary
+
+### Completed Domains
 
 | Domain | Papers | Status |
 |--------|--------|--------|
@@ -48,14 +50,13 @@ Last Updated: 2025-12-28T23:55:00
 | 5: NPCs & Agents | 14 | Complete |
 | 6: Generative Worlds | 9 | Complete |
 | 7: Worldbuilding Theory | 12 | Complete |
-| 8 (exploratory) | 11 | Complete |
+| 8a: Animation & Rigging | 20 | Complete |
 | 8b: Audio Generation | 10 | Complete |
 | 8c: Quest & Dialogue | 11 | Complete |
 | 8d: Multi-Agent Systems | 8 | Complete |
-| 8e: Auto-Rigging | 8 | Complete (to be merged into 8a) |
-| 8f: Houdini + ML | 10 | Complete |
-| 8g: UE5 + ML/PCG | 11 | Complete (to be expanded) |
-| **Total** | **~155** | |
+| 8f: Houdini + ML | 14 | Complete (revised with academic papers) |
+| 8g: UE5 + ML/PCG | 15 | Complete |
+| **Total** | **~170** | ~150 academic + ~20 industry docs |
 
 ---
 
@@ -71,16 +72,23 @@ Last Updated: 2025-12-28T23:55:00
 - `drafts/domain_6_generative_worlds.md`
 - `drafts/domain_7_worldbuilding.md`
 - `drafts/domain_8_exploratory.md`
+- `drafts/domain_8a_animation_rigging.md`
 - `drafts/domain_8b_audio_generation.md`
 - `drafts/domain_8c_quest_dialogue.md`
 - `drafts/domain_8d_multi_agent_systems.md`
-- `drafts/domain_8e_auto_rigging.md`
 - `drafts/domain_8f_houdini_ml.md`
 - `drafts/domain_8g_ue5_pcg_ml.md`
 
 ### Thesis Documents
-- `drafts/methodology_literature_review.md`
-- `drafts/ai_ml_foundations_explainer.md`
+- `drafts/methodology_literature_review.md` (major rewrite - Phase 1 scoping)
+- `drafts/methodology_literature_review_de.md` (German translation)
+- `drafts/ai_ml_foundations_explainer.md` (beginner-friendly AI/ML intro)
+
+### Analysis Notebooks (scaffolding, not executed)
+- `notebooks/01_search_overview.ipynb`
+- `notebooks/02_citation_networks.ipynb`
+- `notebooks/03_bibliometrics.ipynb`
+- `notebooks/04_topic_discovery.ipynb`
 
 ### BibTeX Exports
 - `data/exports/domain_*.bib` (all domains)
@@ -88,34 +96,34 @@ Last Updated: 2025-12-28T23:55:00
 ---
 
 ## Infrastructure Completed
-- [x] Zotero MCP configured (API key + User ID: 13820503)
+- [x] Zotero MCP configured
 - [x] GitHub MCP configured
-- [x] GitHub CLI authenticated (jenniferied)
 - [x] Science MCP configured (arXiv + OpenAlex)
-- [x] Papers MCP configured (arXiv, PubMed, bioRxiv, Web of Science)
-- [x] Thesis context: context/thesis-vision.md
-- [x] CLAUDE.md updated with autonomous behavior rules
+- [x] Papers MCP configured
+- [x] CLAUDE.md with autonomous behavior rules
 
 ---
 
-## MCP Tools Available
-```
-github  - Git operations
-zotero  - Add papers to Zotero collections
-science - OpenAlex + arXiv search
-papers  - arXiv, PubMed, bioRxiv, Web of Science
-```
+## Phase 2 Instructions
+
+When you start Phase 2, the tasks are:
+
+1. **Manual Reading**: Skim all ~170 papers to assess relevance
+2. **Zotero Import**: Import selected papers into reference library
+3. **Focus Selection**: Choose 2-3 domains for deep investigation
+   - Options: Houdini+ML, Generative Worlds, Animation, Text-to-3D
+4. **Narrow to 60-80**: Select final papers for thesis inclusion
+5. **Execute Notebooks**: Run bibliometric analysis on final selection
+6. **Deep Reading**: Thoroughly read selected papers
+7. **Write Literature Review**: Synthesize into thesis chapter
 
 ---
 
-## Next Session Instructions
+## Next Session
 
 When you start a new session, say:
-> "Continue the literature review from checkpoint.md"
+> "Continue from checkpoint.md - begin Phase 2 manual review"
 
-I will:
-1. Read this checkpoint
-2. Continue with in-progress tasks
-3. Use MCP tools for paper discovery
-4. Run critique loops on domain files
-5. Update documents as needed
+Or for specific tasks:
+> "Help me choose which domains to focus on for my thesis"
+> "Execute the bibliometrics notebook on my paper collection"
