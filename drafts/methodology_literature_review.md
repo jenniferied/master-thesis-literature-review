@@ -271,14 +271,25 @@ I explicitly instructed Claude Code to identify research areas I might have miss
 
 ### 4.3 Tiered Citation System
 
-To balance historical influence with recent innovation, I used a tiered citation system:
+To balance historical influence with recent innovation, I used a tiered citation system with domain-specific thresholds. Major AI/ML domains (LLMs, Text-to-Image, 3D Generation) have higher citation volumes, so their thresholds are more stringent. Niche domains (PCG, Game AI, Worldbuilding) have lower absolute counts but equally rigorous relative standards.
 
-| Tier | Citation Count | Interpretation | Examples |
-|------|---------------|----------------|----------|
-| **Tier 1** | >1,000 citations | Foundational/canonical | "Attention Is All You Need" (158k), CLIP (40k) |
-| **Tier 2** | 300-1,000 citations | Field-defining | "Generative Agents" (2.9k), 3D Gaussian Splatting (6k) |
-| **Tier 3** | 50-300 citations | Important contributions | Motion Matching, WFC academic treatments |
-| **Tier 4** | <50 citations | Recent/justified inclusion | 2024-2025 papers with high relevance |
+**Major AI/ML Domains** (LLMs, Diffusion, 3D Generation):
+
+| Tier | Citation Count | Interpretation |
+|------|---------------|----------------|
+| **Tier 1** | >10,000 citations | Mega-foundational |
+| **Tier 2** | 1,000-10,000 citations | Major foundational |
+| **Tier 3** | 100-1,000 citations | Field-defining |
+| **Tier 4** | <100 citations | Emerging/recent |
+
+**Niche Domains** (PCG, Game AI, Worldbuilding, Animation):
+
+| Tier | Citation Count | Interpretation |
+|------|---------------|----------------|
+| **Tier 1** | >1,000 citations | Foundational/canonical |
+| **Tier 2** | 300-1,000 citations | Field-defining |
+| **Tier 3** | 50-300 citations | Important contributions |
+| **Tier 4** | <50 citations | Recent/justified inclusion |
 
 **Why Tiers Matter**
 
@@ -286,7 +297,7 @@ Citation count is an imperfect proxy for importance, but it helps separate landm
 
 **Tier 4 Justification**
 
-Papers with fewer than 50 citations were included only when meeting at least two of these criteria:
+Papers falling into Tier 4 (fewer than 100 citations for major domains, or fewer than 50 for niche domains) were included only when meeting at least two of these criteria:
 1. **Recency**: Published 2023-2025 (insufficient time for citations)
 2. **Direct relevance**: Explicitly addresses indie game development
 3. **Venue prestige**: Published at SIGGRAPH, NeurIPS, CVPR, CHI
@@ -436,18 +447,22 @@ I plan to execute these in Phase 2 when I have finalized my paper selection. The
 | 8d: Multi-Agent Systems | 8 | 8 | 0 |
 | 8f: Houdini + ML | 14 | 14 | 0 |
 | 8g: UE5 + ML/PCG | 15 | 3 | 12 |
-| **Total** | **~170** | **~150** | **~20** |
+| **Total** | **206** | **~150** | **~56** |
 
 **Note**: "Documentation" includes technical documentation, GDC talks, and release notes for engine-specific domains where academic literature is limited.
 
 ### 7.2 Tier Distribution
 
+Based on the domain-specific thresholds described in Section 4.3:
+
 | Tier | Count | Percentage |
 |------|-------|------------|
-| Tier 1 (>1,000 citations) | 28 | 18% |
-| Tier 2 (300-1,000) | 42 | 26% |
-| Tier 3 (50-300) | 52 | 33% |
-| Tier 4 (<50, justified) | 38 | 24% |
+| Tier 1 (Mega-foundational) | 31 | 21% |
+| Tier 2 (Major foundational) | 51 | 35% |
+| Tier 3 (Field-defining) | 58 | 40% |
+| Tier 4 (Emerging/recent) | 5 | 3% |
+
+*Note: 145 of 206 papers (70%) have citation data for tier classification. Papers from industry documentation sources (Houdini, UE5) lack academic citations.*
 
 ### 7.3 Temporal Distribution
 

@@ -1087,7 +1087,7 @@ NeRF:            Store a neural network
                                    viewed from direction (dx,dy,dz)?"
 ```
 
-![NeRF architecture: a neural network that takes 3D position and viewing direction as input and outputs color and density.](../figures/ch-explainer/fig-nerf-architecture.png)
+![NeRF architecture: a neural network that takes 3D position and viewing direction as input and outputs color and density.](../figures/ch-explainer/fig-nerf-architecture.jpeg)
 
 *Figure 6: NeRF neural network architecture. The network learns to map 3D coordinates and viewing directions to colors and densities. Source: Mildenhall et al. (2020), "NeRF: Representing Scenes as Neural Radiance Fields," Figure 2.*
 
@@ -1113,7 +1113,7 @@ Train a network on photos from multiple angles:
 └────────────────────────────────────────────────────────────┘
 ```
 
-![NeRF novel view synthesis results showing photorealistic rendering from new viewpoints.](../figures/ch-explainer/fig-nerf-results.png)
+![NeRF novel view synthesis results showing photorealistic rendering from new viewpoints.](../figures/ch-explainer/fig-nerf-results.jpeg)
 
 *Figure 7: NeRF novel view synthesis. The network renders photorealistic views from angles never seen during training. Source: Mildenhall et al. (2020), Figures 4-5.*
 

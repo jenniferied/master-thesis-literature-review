@@ -87,25 +87,69 @@ def parse_bibtex_simple(filepath):
         if venue_match:
             entry['venue'] = venue_match.group(1).replace('\n', ' ').strip()
 
-        # Extract note (contains citation tier info)
+        # Extract note (contains citation info)
         note_match = re.search(r'note\s*=\s*[{"](.+?)[}"]', raw, re.IGNORECASE | re.DOTALL)
         if note_match:
             entry['note'] = note_match.group(1).replace('\n', ' ').strip()
 
-            # Parse tier from note
-            tier_match = re.search(r'TIER\s*(\d)', entry['note'], re.IGNORECASE)
-            if tier_match:
-                entry['tier'] = int(tier_match.group(1))
-
-            # Parse citation count
+            # Parse citation count from various formats
+            # Format: "~100,000 citations" or "100000 citations" or just a number
             cite_match = re.search(r'~?([\d,]+)\s*citations?', entry['note'], re.IGNORECASE)
             if cite_match:
                 entry['citations'] = int(cite_match.group(1).replace(',', ''))
+            else:
+                # Try standalone number at start of note
+                num_match = re.search(r'^~?([\d,]+)', entry['note'])
+                if num_match:
+                    entry['citations'] = int(num_match.group(1).replace(',', ''))
 
         if entry.get('title'):
             entries.append(entry)
 
     return entries
+
+
+def infer_tier(citations, domain_key):
+    """
+    Infer citation tier based on citation count and domain type.
+
+    Major AI/ML domains (1, 3, 4): Higher thresholds
+    - Tier 1: >10,000 citations (mega-foundational)
+    - Tier 2: 1,000-10,000 citations (major foundational)
+    - Tier 3: 100-1,000 citations (field-defining)
+    - Tier 4: <100 citations (emerging)
+
+    Niche domains (2a, 2b, 5, 6, 7, 8*): Lower thresholds
+    - Tier 1: >1,000 citations
+    - Tier 2: 300-1,000 citations
+    - Tier 3: 50-300 citations
+    - Tier 4: <50 citations
+    """
+    if citations is None:
+        return None
+
+    # Major AI/ML domains with higher citation counts
+    major_domains = ['domain_1', 'domain_3', 'domain_4']
+
+    if domain_key in major_domains:
+        if citations >= 10000:
+            return 1
+        elif citations >= 1000:
+            return 2
+        elif citations >= 100:
+            return 3
+        else:
+            return 4
+    else:
+        # Niche domains with lower thresholds
+        if citations >= 1000:
+            return 1
+        elif citations >= 300:
+            return 2
+        elif citations >= 50:
+            return 3
+        else:
+            return 4
 
 
 def extract_first_author(author_string):
@@ -145,10 +189,17 @@ def analyze_papers():
         for entry in entries:
             entry['domain'] = DOMAIN_NAMES.get(domain_key, domain_key)
             entry['domain_key'] = domain_key
+            # Infer tier from citation count if not already set
+            if 'tier' not in entry or entry.get('tier') is None:
+                entry['tier'] = infer_tier(entry.get('citations'), domain_key)
 
         all_papers.extend(entries)
         domain_counts[DOMAIN_NAMES.get(domain_key, domain_key)] = len(entries)
-        print(f"  {domain_key}: {len(entries)} papers")
+
+        # Count papers with citation data
+        with_citations = sum(1 for e in entries if e.get('citations') is not None)
+        with_tiers = sum(1 for e in entries if e.get('tier') is not None)
+        print(f"  {domain_key}: {len(entries)} papers ({with_citations} with citations, {with_tiers} with tiers)")
 
     print(f"\nTotal papers: {len(all_papers)}")
 
@@ -206,10 +257,14 @@ def analyze_papers():
 
     # 3. Citation Tier Distribution
     print("3. Generating tier distribution...")
-    if 'tier' in df.columns:
+    if 'tier' in df.columns and df['tier'].notna().any():
         tier_data = df[df['tier'].notna()]['tier'].value_counts().sort_index()
+        papers_with_tiers = df['tier'].notna().sum()
+        papers_without_tiers = df['tier'].isna().sum()
+        print(f"   Papers with tiers: {papers_with_tiers}, without: {papers_without_tiers}")
     else:
         tier_data = pd.Series({1: 0, 2: 0, 3: 0, 4: 0})
+        print("   Warning: No tier data available")
 
     fig, ax = plt.subplots(figsize=(10, 6))
     tier_colors = ['#2ecc71', '#3498db', '#f39c12', '#e74c3c']
@@ -310,12 +365,19 @@ The literature shows clear inflection points:
     summary += f"""
 ### Citation Tier Distribution
 
-| Tier | Description | Count |
-|------|-------------|-------|
-| 1 | Mega-foundational (>10K citations) | {tier_data.get(1, 0)} |
-| 2 | Major foundational (1K-10K) | {tier_data.get(2, 0)} |
-| 3 | Field-defining (100-1K) | {tier_data.get(3, 0)} |
-| 4 | Emerging (<100) | {tier_data.get(4, 0)} |
+Tiers are assigned using domain-specific thresholds:
+
+**Major AI/ML Domains** (LLMs, Text-to-Image, 3D Generation):
+
+| Tier | Threshold | Count |
+|------|-----------|-------|
+| 1 | >10,000 citations | {tier_data.get(1, 0)} |
+| 2 | 1,000-10,000 | {tier_data.get(2, 0)} |
+| 3 | 100-1,000 | {tier_data.get(3, 0)} |
+| 4 | <100 | {tier_data.get(4, 0)} |
+
+**Niche Domains** (PCG, Game AI, Worldbuilding, etc.) use lower thresholds:
+Tier 1 >1,000, Tier 2 300-1,000, Tier 3 50-300, Tier 4 <50.
 
 ### Top Venues
 
@@ -346,7 +408,7 @@ The bibliometric analysis reveals:
 
 ---
 
-*Generated: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M')}*
+*Generated: """ + pd.Timestamp.now().strftime('%Y-%m-%d %H:%M') + """*
 """
 
     with open(SUMMARY_DIR / 'bibliometric_summary.md', 'w') as f:

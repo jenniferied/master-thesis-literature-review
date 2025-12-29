@@ -1,13 +1,17 @@
 # Makefile for Master Thesis Literature Review
 
-.PHONY: help explainer explainer-pdf lint lint-fix clean
+.PHONY: help explainer lit-review all lint lint-fix clean analysis
 
 help:
 	@echo "Master Thesis Literature Review - Build Commands"
 	@echo ""
 	@echo "PDF Generation:"
 	@echo "  explainer         Build AI/ML Foundations Explainer PDF"
-	@echo "  explainer-copy    Copy explainer markdown to export/"
+	@echo "  lit-review        Build Literature Review Chapter PDF"
+	@echo "  all               Build all PDFs"
+	@echo ""
+	@echo "Analysis:"
+	@echo "  analysis          Run bibliometric analysis"
 	@echo ""
 	@echo "Quality Checks:"
 	@echo "  lint              Run markdownlint on all markdown files"
@@ -21,31 +25,67 @@ help:
 	@echo "  - Pandoc (https://pandoc.org/)"
 	@echo "  - markdownlint-cli (npm install -g markdownlint-cli)"
 
-# Build explainer PDF
+# Build all PDFs
+all: explainer lit-review
+
+# Build explainer PDF using thesis template
 explainer:
 	@echo "Building AI/ML Foundations Explainer PDF..."
-	@python3 scripts/build-explainer.py
+	@cd drafts && pandoc ai_ml_foundations_explainer.md \
+		--template=../templates/thesis.tex \
+		--pdf-engine=lualatex \
+		--toc \
+		-V title="AI/ML Foundations Explainer" \
+		-V author="Jennifer Ried" \
+		-V date="December 2025" \
+		-V institute="Technische Hochschule Ostwestfalen-Lippe" \
+		-V department="Department of Media Production" \
+		-o ../export/ai_ml_foundations_explainer.pdf 2>&1 || \
+		(echo "Thesis template failed, using simple build..."; \
+		 pandoc ai_ml_foundations_explainer.md \
+			--pdf-engine=lualatex \
+			--toc \
+			-V geometry:margin=2.54cm \
+			-o ../export/ai_ml_foundations_explainer.pdf)
 	@echo "✓ Explainer PDF: export/ai_ml_foundations_explainer.pdf"
 
-# Alias for explainer
-explainer-pdf: explainer
+# Build literature review PDF using thesis template
+lit-review:
+	@echo "Building Literature Review Chapter PDF..."
+	@cd drafts && pandoc literature_review_chapter.md \
+		--template=../templates/thesis.tex \
+		--pdf-engine=lualatex \
+		--toc \
+		-V title="Literature Review: AI-Assisted Worldbuilding" \
+		-V author="Jennifer Ried" \
+		-V date="December 2025" \
+		-V institute="Technische Hochschule Ostwestfalen-Lippe" \
+		-V department="Department of Media Production" \
+		-o ../export/literature_review_chapter.pdf 2>&1 || \
+		(echo "Thesis template failed, using simple build..."; \
+		 pandoc literature_review_chapter.md \
+			--pdf-engine=lualatex \
+			--toc \
+			-V geometry:margin=2.54cm \
+			-o ../export/literature_review_chapter.pdf)
+	@echo "✓ Literature Review PDF: export/literature_review_chapter.pdf"
 
-# Copy explainer to export (markdown only)
-explainer-copy:
-	@echo "Copying explainer to export..."
-	@python3 scripts/build-explainer.py --merge-only
-	@echo "✓ Copied to export/ai_ml_foundations_explainer.md"
+# Run bibliometric analysis
+analysis:
+	@echo "Running bibliometric analysis..."
+	@python3 scripts/bibliometric_analysis.py
+	@echo "✓ Analysis complete: outputs/bibliometric_summary.md"
 
 # Lint all markdown files
 lint:
 	@echo "Running markdownlint..."
-	@markdownlint "drafts/**/*.md" "*.md" || true
+	@npx markdownlint-cli "drafts/**/*.md" "*.md" || true
 	@echo "✓ Lint complete"
 
 # Auto-fix lint issues
 lint-fix:
 	@echo "Auto-fixing lint issues..."
-	@markdownlint --fix "drafts/**/*.md" "*.md" || true
+	@npx markdownlint-cli --fix "drafts/**/*.md" "*.md" || true
 	@echo "✓ Lint fixes applied"
 
 # Clean generated files

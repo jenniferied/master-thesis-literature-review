@@ -39,12 +39,19 @@ The literature shows clear inflection points:
 
 ### Citation Tier Distribution
 
-| Tier | Description | Count |
-|------|-------------|-------|
-| 1 | Mega-foundational (>10K citations) | 0 |
-| 2 | Major foundational (1K-10K) | 0 |
-| 3 | Field-defining (100-1K) | 0 |
-| 4 | Emerging (<100) | 0 |
+Tiers are assigned using domain-specific thresholds:
+
+**Major AI/ML Domains** (LLMs, Text-to-Image, 3D Generation):
+
+| Tier | Threshold | Count |
+|------|-----------|-------|
+| 1 | >10,000 citations | 31 |
+| 2 | 1,000-10,000 | 51 |
+| 3 | 100-1,000 | 58 |
+| 4 | <100 | 5 |
+
+**Niche Domains** (PCG, Game AI, Worldbuilding, etc.) use lower thresholds:
+Tier 1 >1,000, Tier 2 300-1,000, Tier 3 50-300, Tier 4 <50.
 
 ### Top Venues
 
@@ -81,4 +88,4 @@ The bibliometric analysis reveals:
 
 ---
 
-*Generated: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M')}*
+*Generated: 2025-12-29 05:55*
