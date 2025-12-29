@@ -367,7 +367,9 @@ Before CNNs, image recognition was a hard problem. Researchers hand-crafted feat
 
 CNNs learn their own features automatically. They became famous for tasks like distinguishing images of chihuahuas from images of muffins—a tongue-in-cheek example that illustrated both their power and their brittleness.
 
-**[FIGURE PLACEHOLDER: Chihuahua vs. muffin comparison image - source: Freund/Marckini, 2016 viral tweet; illustrates that CNNs learn statistical patterns, not conceptual understanding]**
+![Chihuahua or Muffin? A viral image demonstrating that CNNs learn statistical patterns rather than conceptual understanding. The visual similarity between chihuahuas and muffins causes classification failures.](../figures/ch-explainer/fig-chihuahua-muffin.png)
+
+*Figure 1: "Chihuahua or Muffin?" from the Recognition Series. Source: Karen Zack (@teenybiscuit), March 2016. Used to illustrate that neural networks match visual patterns, not concepts.*
 
 The CNN architecture was introduced by LeCun et al. (1998) for handwritten digit recognition, but only became practical at scale after AlexNet.
 
@@ -855,7 +857,9 @@ When you look at clouds, you see shapes—faces, animals, objects. The clouds ar
 
 Diffusion models do the same thing, but with mathematical precision. They have learned "what real images look like" so thoroughly that they can interpret random noise as the beginnings of images and gradually refine that interpretation.
 
-**[FIGURE PLACEHOLDER: Diffusion process visualization showing same prompt with different random seeds producing different but coherent images - see Ho et al. (2020), Figure 2]**
+![The forward and reverse diffusion process. Training adds noise progressively (forward); generation removes noise step by step (reverse).](../figures/ch-explainer/fig-diffusion-process.png)
+
+*Figure 2: The diffusion process showing forward (adding noise) and reverse (denoising) paths. Adapted from Ho, Jain, & Abbeel (2020), "Denoising Diffusion Probabilistic Models," Figure 2.*
 
 ### 6.3 How Diffusion Training Works
 
@@ -1007,7 +1011,9 @@ Input: Depth map of a room + prompt "cozy living room"
 Output: Image matching the 3D layout with cozy aesthetic
 ```
 
-**[FIGURE PLACEHOLDER: ControlNet examples from Zhang et al. (2023) - pose/depth/edge inputs with outputs]**
+![ControlNet spatial control examples showing pose, depth, and edge conditioning for diffusion models.](../figures/ch-explainer/fig-controlnet-examples.png)
+
+*Figure 5: ControlNet examples showing various spatial control inputs (pose, depth, edges) and their corresponding outputs. Source: Zhang, Rao, & Agrawala (2023), "Adding Conditional Control to Text-to-Image Diffusion Models," Figure 1.*
 
 | Method | What It Does | Example Use |
 |--------|-------------|-------------|
@@ -1081,7 +1087,9 @@ NeRF:            Store a neural network
                                    viewed from direction (dx,dy,dz)?"
 ```
 
-**[FIGURE PLACEHOLDER: NeRF architecture diagram from Mildenhall et al. (2020) showing position/direction inputs → network → color/density outputs]**
+![NeRF architecture: a neural network that takes 3D position and viewing direction as input and outputs color and density.](../figures/ch-explainer/fig-nerf-architecture.png)
+
+*Figure 6: NeRF neural network architecture. The network learns to map 3D coordinates and viewing directions to colors and densities. Source: Mildenhall et al. (2020), "NeRF: Representing Scenes as Neural Radiance Fields," Figure 2.*
 
 Train a network on photos from multiple angles:
 
@@ -1105,7 +1113,9 @@ Train a network on photos from multiple angles:
 └────────────────────────────────────────────────────────────┘
 ```
 
-**[FIGURE PLACEHOLDER: NeRF results showing novel view synthesis - Stanford Bunny or Lego scene from original paper]**
+![NeRF novel view synthesis results showing photorealistic rendering from new viewpoints.](../figures/ch-explainer/fig-nerf-results.png)
+
+*Figure 7: NeRF novel view synthesis. The network renders photorealistic views from angles never seen during training. Source: Mildenhall et al. (2020), Figures 4-5.*
 
 NeRF produces photorealistic novel views, including correct reflections and view-dependent effects. But rendering is slow (~30 seconds per image) because you must query the network millions of times per image.
 
@@ -1187,13 +1197,17 @@ The insight: We have powerful 2D image generators (Stable Diffusion). We do not 
 └────────────────────────────────────────────────────────────┘
 ```
 
-**[FIGURE PLACEHOLDER: DreamFusion results from Poole et al. (2022)]**
+![DreamFusion text-to-3D generation results showing 3D objects created from text prompts.](../figures/ch-explainer/fig-dreamfusion-results.png)
+
+*Figure 3: Text-to-3D results from DreamFusion. Source: Poole, Jain, Barron, & Mildenhall (2022), "DreamFusion: Text-to-3D using 2D Diffusion," Figure 1.*
 
 **The Janus Problem:**
 
 A common failure mode in text-to-3D: the model creates an object with the described features on ALL sides. A "dog" might have a face on the front AND the back.
 
-**[FIGURE PLACEHOLDER: Janus problem illustration showing multi-faced 3D generation failure]**
+![The Janus problem: 3D objects with duplicate features on multiple sides due to 2D diffusion models wanting every view to match the text prompt.](../figures/ch-explainer/fig-janus-problem.png)
+
+*Figure 4: The Janus problem in text-to-3D generation. Source: Poole et al. (2022), "DreamFusion," Figure 3.*
 
 This happens because 2D diffusion models see every view independently. They want each view to match the prompt. Since "dog" usually shows a face, every view gets a face.
 
@@ -1331,7 +1345,9 @@ Recent research explores multiple AI agents collaborating:
 
 **ChatDev** (Qian et al., 2023) simulates a software company:
 
-**[FIGURE PLACEHOLDER: ChatDev architecture diagram from Qian et al. (2023) showing agent roles and communication flow]**
+![ChatDev multi-agent architecture showing specialized roles (CEO, CTO, programmer, tester) communicating through a structured workflow.](../figures/ch-explainer/fig-chatdev-architecture.png)
+
+*Figure 8: ChatDev multi-agent software development workflow. Specialized LLM agents take on distinct roles and communicate through structured phases. Source: Qian et al. (2023), "ChatDev: Communicative Agents for Software Development," Figure 2.*
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
@@ -1699,19 +1715,36 @@ Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). The impact of AI on
 
 ---
 
-## Figure Placeholders Summary
+## List of Figures
 
-The following figures should be added to enhance understanding:
+### Figures Included in This Document
 
-1. **Chihuahua vs. muffin comparison** (Section 3.3) - Illustrates pattern matching limitations
-2. **Diffusion process visualization** (Section 6.2) - Shows progressive denoising
-3. **Same seed comparison** (Section 6.6) - "cat astronaut" vs "dog astronaut"
-4. **LoRA training example** (Section 6.7) - Input images → trained model → outputs
-5. **ControlNet examples** (Section 6.7) - Pose/depth/edge control
-6. **ComfyUI workflow** (Section 6.7) - Node-based generation pipeline [USER TO ADD]
-7. **Photogrammetry pipeline** (Section 7.2) - Photos → point cloud → mesh
-8. **NeRF architecture** (Section 7.3) - Position inputs → network → color outputs
-9. **3D Gaussian Splatting** (Section 7.4) - Individual Gaussians → rendered result
-10. **Janus problem illustration** (Section 7.5) - Multi-faced 3D failure mode
-11. **ChatDev architecture** (Section 8.4) - Agent roles and communication
-12. **ComfyUI 3D workflow** (Section 7.5) - [USER TO ADD if available]
+| Fig. | Description | Source & Attribution |
+|------|-------------|---------------------|
+| 1 | Chihuahua or Muffin? | Karen Zack (@teenybiscuit), March 2016. "Recognition Series." Used with attribution to illustrate CNN pattern matching limitations. |
+| 2 | Diffusion Process | Ho, J., Jain, A., & Abbeel, P. (2020). "Denoising Diffusion Probabilistic Models." NeurIPS 2020, Figure 2. |
+| 3 | DreamFusion Results | Poole, B., Jain, A., Barron, J. T., & Mildenhall, B. (2022). "DreamFusion: Text-to-3D using 2D Diffusion." ICLR 2023, Figure 1. |
+| 4 | Janus Problem | Poole et al. (2022). DreamFusion, Figure 3. |
+| 5 | ControlNet Examples | Zhang, L., Rao, A., & Agrawala, M. (2023). "Adding Conditional Control to Text-to-Image Diffusion Models." ICCV 2023, Figure 1. |
+| 6 | NeRF Architecture | Mildenhall, B., et al. (2020). "NeRF: Representing Scenes as Neural Radiance Fields." ECCV 2020, Figure 2. |
+| 7 | NeRF Results | Mildenhall et al. (2020). NeRF, Figures 4-5. |
+| 8 | ChatDev Architecture | Qian, C., et al. (2023). "ChatDev: Communicative Agents for Software Development." arXiv:2307.07924, Figure 2. |
+
+### Figures Pending (User Action Required)
+
+The following figures require manual creation:
+
+- **ComfyUI Workflow** (Section 6.7) - Screenshot of node-based text-to-image pipeline
+- **ComfyUI ControlNet Workflow** (Section 6.7) - Screenshot showing ControlNet nodes
+- **ComfyUI LoRA Workflow** (Section 6.7) - Screenshot showing LoRA loading
+- **Same Seed Comparison** (Section 6.6) - "cat astronaut" vs "dog astronaut" with identical seeds
+- **LoRA Training Example** (Section 6.7) - Before/after fine-tuning comparison
+
+### Figure Placeholders Remaining
+
+The following could be added but are not essential:
+
+- Photogrammetry pipeline diagram (Section 7.2)
+- 3D Gaussian Splatting visualization (Section 7.4)
+- NeRF vs 3DGS speed comparison (Section 7.4)
+- ComfyUI 3D workflow (Section 7.5)
