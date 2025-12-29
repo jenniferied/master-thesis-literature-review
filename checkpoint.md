@@ -22,17 +22,23 @@ Last Updated: 2025-12-29T04:30:00
 ---
 
 ## Session Status
-- **Phase:** PHASE 1 COMPLETE - AI/ML EXPLAINER POLISHED
+- **Phase:** PHASE 1 COMPLETE - CITATION ALIGNMENT DONE
 - **Next Action:** Extract figures from PDFs, test LaTeX pipeline, begin Phase 2
 
-## Current Session Tasks (2025-12-29)
+## Current Session Tasks (2025-12-29 - Continued)
+1. [x] Citation alignment: Verify all explainer citations against domain research
+2. [x] Add 7 foundational papers to Domain 1 (LSTM, LeNet, Deep Belief Nets, ImageNet, ReLU, AlexNet, Zeiler & Fergus)
+3. [x] Add GANs paper to Domain 3
+4. [x] Split References section into "Papers from Domain Research" vs "External Sources"
+5. [x] Update checkpoint
+
+## Previous Session Tasks (2025-12-29)
 1. [x] Comprehensive AI/ML Explainer rewrite with 30+ APA citations
 2. [x] Fix all markdown lint errors (100+ fixed)
 3. [x] Create figures directory structure
 4. [x] Download academic papers for figure extraction (5 PDFs, ~49MB)
 5. [x] Create ComfyUI placeholder instructions (3 variations)
 6. [x] Port LaTeX/PDF build pipeline from master-thesis
-7. [x] Update checkpoint
 
 ## Pending Manual Tasks (User Action Required)
 1. [ ] Extract figures from downloaded PDFs (see `figures/ch-explainer/placeholders/figure-extraction-guide.md`)
@@ -47,10 +53,10 @@ Last Updated: 2025-12-29T04:30:00
 
 | Domain | Papers | Status |
 |--------|--------|--------|
-| 1: LLMs & Transformers | 11 | Complete |
+| 1: LLMs & Transformers | 18 | Complete (+7 foundational) |
 | 2a: PCG Foundations | 11 | Complete |
 | 2b: PCG + AI/ML | 14 | Complete |
-| 3: Text-to-Image/Video | 17 | Complete |
+| 3: Text-to-Image/Video | 18 | Complete (+1 GANs) |
 | 4: 3D Generation | 8 | Complete |
 | 5: NPCs & Agents | 14 | Complete |
 | 6: Generative Worlds | 9 | Complete |
@@ -61,7 +67,7 @@ Last Updated: 2025-12-29T04:30:00
 | 8d: Multi-Agent Systems | 8 | Complete |
 | 8f: Houdini + ML | 14 | Complete (revised with academic papers) |
 | 8g: UE5 + ML/PCG | 15 | Complete |
-| **Total** | **~170** | ~150 academic + ~20 industry docs |
+| **Total** | **~178** | ~158 academic + ~20 industry docs |
 
 ---
 

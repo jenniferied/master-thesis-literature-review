@@ -20,6 +20,115 @@ Papers selected using tiered citation approach:
 
 ---
 
+## Deep Learning Foundations (Pre-Transformer)
+
+These foundational papers establish the core concepts that made Transformers possible. While predating modern LLMs, they represent essential background for understanding how we got here.
+
+### Hochreiter & Schmidhuber (1997) - "Long Short-Term Memory"
+**~100,000 citations** | Neural Computation
+
+The solution to vanishing gradients in sequence modeling:
+- **Memory cells:** Gated cells that maintain information over long sequences
+- **Input/output/forget gates:** Control information flow
+- **Vanishing gradient solution:** Constant error flow through cell state
+- **Sequence modeling:** Foundation for pre-Transformer NLP
+
+*Thesis relevance:* Historical foundation - LSTMs were the dominant sequence model before Transformers replaced them. Understanding why Transformers won informs architectural choices.
+
+*Venue:* Neural Computation - Premier computational neuroscience journal
+
+---
+
+### LeCun, Bottou, Bengio & Haffner (1998) - "Gradient-Based Learning Applied to Document Recognition"
+**~50,000 citations** | Proceedings of the IEEE
+
+The birth of modern neural networks:
+- **Convolutional neural networks:** LeNet architecture for digit recognition
+- **Backpropagation:** End-to-end gradient-based learning
+- **Weight sharing:** Spatial invariance through convolution
+- **Practical success:** Deployed in real-world check reading
+
+*Thesis relevance:* CNNs remain the backbone of vision encoders (CLIP, ControlNet). Understanding convolution is essential for multimodal AI.
+
+*Venue:* Proceedings of the IEEE - Premier engineering journal
+
+---
+
+### Hinton, Osindero & Teh (2006) - "A Fast Learning Algorithm for Deep Belief Nets"
+**~18,000 citations** | Neural Computation
+
+The paper that revived deep learning:
+- **Deep belief networks:** Multiple layers of restricted Boltzmann machines
+- **Layer-wise pre-training:** Train one layer at a time, then fine-tune
+- **Generative model:** Learn probability distributions over data
+- **Deep learning renaissance:** Showed deep networks could be trained
+
+*Thesis relevance:* The pre-training insight led directly to BERT and GPT. Pre-train on large data, fine-tune for specific tasks.
+
+*Venue:* Neural Computation - Premier computational neuroscience journal
+
+---
+
+### Deng, Dong, Socher, Li, Li & Fei-Fei (2009) - "ImageNet: A Large-Scale Hierarchical Image Database"
+**~50,000 citations** | CVPR 2009
+
+The dataset that enabled deep learning:
+- **14 million images:** Unprecedented scale
+- **21,000+ categories:** Hierarchical organization via WordNet
+- **Annual challenge (ILSVRC):** Drove progress through competition
+- **Transfer learning:** Pre-trained ImageNet features became universal
+
+*Thesis relevance:* ImageNet proved scale matters. Modern AI (LLMs, diffusion) follows the same lesson: more data, better models.
+
+*Venue:* CVPR - Premier computer vision conference
+
+---
+
+### Nair & Hinton (2010) - "Rectified Linear Units Improve Restricted Boltzmann Machines"
+**~20,000 citations** | ICML 2010
+
+Simple activation function, massive impact:
+- **ReLU:** max(0, x) - the simplest useful nonlinearity
+- **Faster training:** No vanishing gradients like tanh/sigmoid
+- **Sparse activations:** Natural regularization
+- **Standard choice:** Used in virtually all modern deep networks
+
+*Thesis relevance:* ReLU is in every neural network you'll use. Simple but essential foundation.
+
+*Venue:* ICML - Premier ML conference
+
+---
+
+### Krizhevsky, Sutskever & Hinton (2012) - "ImageNet Classification with Deep Convolutional Neural Networks" (AlexNet)
+**~163,000 citations** | NeurIPS 2012
+
+The moment deep learning went mainstream:
+- **60 million parameters:** Largest network at the time
+- **GPU training:** First successful large-scale GPU implementation
+- **Dropout:** Regularization through random neuron deactivation
+- **ILSVRC 2012 winner:** 16.4% error vs. 26.2% runner-up
+
+*Thesis relevance:* THE inflection point. Before AlexNet: AI winter skepticism. After: massive industry investment. Explains why AI tools exist today.
+
+*Venue:* NeurIPS - Premier ML conference
+
+---
+
+### Zeiler & Fergus (2014) - "Visualizing and Understanding Convolutional Networks"
+**~15,000 citations** | ECCV 2014
+
+Making neural networks interpretable:
+- **Deconvolution visualization:** See what features each layer learns
+- **Layer-by-layer analysis:** Edge detectors → textures → parts → objects
+- **Ablation studies:** Systematic analysis of architecture choices
+- **Interpretability:** Foundation for understanding what networks learn
+
+*Thesis relevance:* Understanding how networks "see" informs texture generation, style transfer, and ControlNet conditioning.
+
+*Venue:* ECCV - Premier computer vision conference
+
+---
+
 ## Tier 1: Mega-Foundational Papers (>50,000 citations)
 
 ### Vaswani, Shazeer, Parmar et al. (2017) - "Attention Is All You Need"
@@ -182,6 +291,20 @@ Open-source code generation:
 ## Evolution of the Field
 
 ```
+1997: LSTM (Sequence modeling foundation)
+   ↓
+1998: LeNet/CNNs (Visual recognition foundation)
+   ↓
+2006: Deep Belief Nets (Pre-training breakthrough)
+   ↓
+2009: ImageNet (Dataset that enabled scale)
+   ↓
+2010: ReLU (Simple activation, huge impact)
+   ↓
+2012: AlexNet (Deep learning goes mainstream)
+   ↓
+2014: Zeiler & Fergus (Understanding what networks learn)
+   ↓
 2017: Attention Is All You Need (Transformer)
    ↓
 2018: GPT-1, BERT (Pre-training revolution)
@@ -205,8 +328,15 @@ Open-source code generation:
 
 | Concept | Paper | Application |
 |---------|-------|-------------|
+| **LSTM** | Hochreiter 1997 | Sequence modeling (pre-Transformer) |
+| **CNNs** | LeCun 1998 | Visual feature extraction (CLIP, ControlNet) |
+| **Pre-training** | Hinton 2006 | Train on large data, fine-tune for tasks |
+| **Scale** | ImageNet 2009 | More data = better models |
+| **ReLU** | Nair 2010 | Universal activation function |
+| **Deep learning** | Krizhevsky 2012 (AlexNet) | The breakthrough moment |
+| **Interpretability** | Zeiler 2014 | Understanding what networks learn |
 | **Transformer** | Vaswani 2017 | Architecture behind all modern AI |
-| **Pre-training** | Devlin BERT | Train once, adapt to any task |
+| **Transfer learning** | Devlin BERT | Train once, adapt to any task |
 | **Few-shot learning** | Brown GPT-3 | Learn from examples in prompt |
 | **Instruction-following** | Ouyang InstructGPT | Models that do what you ask |
 | **Chain-of-thought** | Wei 2022 | Complex reasoning via prompting |
@@ -231,10 +361,11 @@ Open-source code generation:
 
 | Tier | Count | Papers |
 |------|-------|--------|
+| **Pre-Transformer** | 7 | LSTM, LeNet, Deep Belief Nets, ImageNet, ReLU, AlexNet, Zeiler & Fergus |
 | **Tier 1** | 3 | Transformer, BERT, GPT-3 |
 | **Tier 2** | 3 | GPT-2, T5, LLaMA |
-| **Tier 3** | 4 | InstructGPT, Chain-of-Thought, Codex, Scaling Laws, Code Llama |
-| **Total** | 11 | |
+| **Tier 3** | 5 | InstructGPT, Chain-of-Thought, Codex, Scaling Laws, Code Llama |
+| **Total** | 18 | |
 
 ---
 

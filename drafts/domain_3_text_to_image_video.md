@@ -24,6 +24,21 @@ Papers selected using tiered citation approach:
 
 ### Tier 1: Mega-Foundational Papers (>10,000 citations)
 
+#### Goodfellow, Pouget-Abadie, Mirza et al. (2014) - "Generative Adversarial Nets" (GANs)
+**~70,000 citations** | NeurIPS 2014
+
+The paper that launched neural image generation:
+- **Generator vs. Discriminator:** Two networks in adversarial competition
+- **Minimax game:** Generator creates fakes, discriminator detects them
+- **Implicit density modeling:** Learn to sample without modeling distribution
+- **Training dynamics:** Unstable but powerful when it works
+
+*Thesis relevance:* GANs dominated image generation 2014-2020 before diffusion. Understanding GANs explains why diffusion won (stable training, mode coverage) and informs StyleGAN-based tools still in use.
+
+*Venue:* NeurIPS - Premier ML conference
+
+---
+
 #### Radford, Kim, Hallacy et al. (2021) - "Learning Transferable Visual Models From Natural Language Supervision" (CLIP)
 **~40,000 citations** | ICML 2021
 
@@ -258,7 +273,9 @@ Foundational video diffusion:
 ## Evolution of the Field
 
 ```
-2014-2018: GAN Era (StyleGAN peak)
+2014: GANs - Neural image generation begins (Goodfellow)
+    ↓
+2014-2018: GAN Era refinement (StyleGAN peak)
     ↓
 2020: DDPM - Diffusion models competitive with GANs
     ↓
@@ -286,6 +303,7 @@ Foundational video diffusion:
 
 | Concept | Paper | Application |
 |---------|-------|-------------|
+| **GANs** | Goodfellow 2014 | Pre-diffusion image generation |
 | **Diffusion** | Ho DDPM | Iterative denoising for generation |
 | **Latent diffusion** | Rombach LDM | Efficient high-res generation |
 | **CLIP conditioning** | Radford CLIP | Text-guided generation |
@@ -339,11 +357,11 @@ Foundational video diffusion:
 
 | Category | Count | Papers |
 |----------|-------|--------|
-| **Foundation (T1)** | 4 | CLIP, DDPM, LDM, StyleGAN |
+| **Foundation (T1)** | 5 | GANs, CLIP, DDPM, LDM, StyleGAN |
 | **Text-to-Image (T2)** | 4 | DALL-E 2, Imagen, ControlNet, SDXL |
 | **Style Consistency** | 4 | LoRA, DreamBooth, Textual Inversion, IP-Adapter |
 | **Text-to-Video** | 5 | Make-A-Video, Sora, Gen-2, SVD, Video Diffusion |
-| **Total** | 17 | |
+| **Total** | 18 | |
 
 ---
 
