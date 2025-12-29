@@ -1,0 +1,186 @@
+% LaTeX Template for AI/ML Foundations Explainer
+% Configured for LuaLaTeX with standard fonts
+% Based on master-thesis template (simplified)
+
+\documentclass[
+  $if(fontsize)$$fontsize$$else$11pt$endif$,
+  a4paper,
+  oneside
+]{article}
+
+% Encoding and font support for LuaLaTeX
+\usepackage{fontspec}
+
+% Use standard fonts (no custom font files needed)
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+% Polyglossia for language support
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+% Page layout
+\usepackage[
+  left=2.54cm,
+  right=2.54cm,
+  top=2.54cm,
+  bottom=2.54cm
+]{geometry}
+
+% Paragraph formatting
+\usepackage{indentfirst}
+\setlength{\parindent}{0.5cm}
+\setlength{\parskip}{0.5em}
+
+% Line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\footnotesize AI/ML Foundations Explainer}
+\fancyhead[R]{\footnotesize\leftmark}
+\fancyfoot[C]{\thepage}
+
+% Section formatting
+\usepackage{titlesec}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Heading styles
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+% Hyperlinks
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black,
+  pdfusetitle
+]{hyperref}
+
+% Graphics support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Graphics path (relative to drafts directory)
+\graphicspath{{../figures/ch-explainer/}{../figures/}{./figures/}}
+
+% Table support
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+
+% List support
+\usepackage{enumitem}
+
+% Pandoc tightlist command
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Color support
+\usepackage{xcolor}
+
+% Caption formatting
+\usepackage{caption}
+\captionsetup{
+  font={small},
+  labelfont={bf},
+  format=plain,
+  justification=justified,
+  singlelinecheck=false
+}
+
+% Code block styling
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{gray!50},
+  backgroundcolor=\color{gray!5},
+  xleftmargin=0.5cm,
+  xrightmargin=0.5cm,
+}
+
+% For verbatim environments (Pandoc code blocks)
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\},
+  fontsize=\small,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{gray!50},
+  xleftmargin=0.5cm,
+  xrightmargin=0.5cm,
+  breaklines=true,
+}
+
+% Pandoc metadata
+$if(title)$
+\title{$title$}
+$endif$
+
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+
+$if(date)$
+\date{$date$}
+$else$
+\date{\today}
+$endif$
+
+% Document metadata for PDF
+\hypersetup{
+  pdftitle={$if(title)$$title$$else$AI/ML Foundations Explainer$endif$},
+  pdfauthor={$if(author)$$for(author)$$author$$sep$; $endfor$$endif$}
+}
+
+% Begin document
+\begin{document}
+
+% Title page
+$if(title)$
+\maketitle
+\thispagestyle{empty}
+\clearpage
+$endif$
+
+% Abstract
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+\clearpage
+$endif$
+
+% Table of contents
+$if(toc)$
+\tableofcontents
+\clearpage
+$endif$
+
+% List of figures
+$if(lof)$
+\listoffigures
+\clearpage
+$endif$
+
+% Main content
+$body$
+
+\end{document}

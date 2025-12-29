@@ -31,12 +31,14 @@ This vision remains largely unrealized seventy years later. What we call "AI" to
 The first era of AI relied on human experts writing explicit rules—a paradigm called **symbolic AI** or **expert systems**. Researchers believed that encoding human knowledge as logical rules would produce intelligent behavior.
 
 Examples of classical AI systems:
+
 - **MYCIN** (1976): A medical diagnosis system at Stanford containing ~600 hand-written rules like "IF the patient has fever AND the culture shows gram-positive cocci THEN consider staphylococcus infection" (Shortliffe, 1976)
 - **Deep Blue** (1997): IBM's chess computer that defeated world champion Garry Kasparov using hand-crafted evaluation functions and brute-force search through millions of positions
 - **Expert systems** in business: Rule-based systems for loan approval, insurance claims, and manufacturing quality control
 
 Video game AI from this era used the same approach:
-```
+
+```text
 IF player_health < 20 THEN flee
 IF enemy_visible AND weapon_equipped THEN attack
 IF distance_to_player > 100 THEN patrol
@@ -82,7 +84,7 @@ Imagine you are sorting mail. Each letter needs to go to the right house, but th
 
 A neural network does the same thing, but with numbers. It takes input (like pixel values from an image), processes them through a series of mathematical calculations, and produces output (like "this is a cat").
 
-```
+```text
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
 │   INPUT     │     │  PROCESSING │     │   OUTPUT    │
 │             │     │             │     │             │
@@ -101,6 +103,7 @@ Forget biology. An artificial "neuron" is simply a formula—exactly like a cell
 **The restaurant rating example:**
 
 Imagine you rate restaurants based on three factors:
+
 1. Food quality (scored 1–10)
 2. Service (scored 1–10)
 3. Atmosphere (scored 1–10)
@@ -108,12 +111,14 @@ Imagine you rate restaurants based on three factors:
 But they are not equally important to you. Food matters most (weight: 0.6), service matters somewhat (weight: 0.3), and atmosphere is nice but not essential (weight: 0.1).
 
 Your overall rating calculation:
-```
+
+```text
 Overall = (Food × 0.6) + (Service × 0.3) + (Atmosphere × 0.1)
 ```
 
 For a restaurant with Food=8, Service=7, Atmosphere=5:
-```
+
+```text
 Overall = (8 × 0.6) + (7 × 0.3) + (5 × 0.1)
         = 4.8 + 2.1 + 0.5
         = 7.4
@@ -121,7 +126,7 @@ Overall = (8 × 0.6) + (7 × 0.3) + (5 × 0.1)
 
 **That is exactly what a neuron does:**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │  NEURON = Weighted Sum + Decision                           │
 │                                                              │
@@ -138,7 +143,7 @@ Overall = (8 × 0.6) + (7 × 0.3) + (5 × 0.1)
 
 After computing the weighted sum, the neuron applies a threshold to decide whether to "activate" (output a signal) or stay quiet. Using our restaurant example:
 
-```
+```text
 Threshold: 5.0
 
 If sum ≥ 5.0 → Output: "Activate" (pass signal forward)
@@ -160,7 +165,7 @@ One neuron can make simple decisions. Stack them in layers, and they can recogni
 
 **Think of a car factory assembly line:**
 
-```
+```text
 Station 1: Attach wheels      (Simple, local task)
 Station 2: Install engine     (Builds on wheels being there)
 Station 3: Add body panels    (Builds on engine)
@@ -172,7 +177,7 @@ Each station does one simple job, but the sequence creates a complex product.
 
 **Neural networks for image recognition work similarly:**
 
-```
+```text
 Layer 1: Detect edges         (Where does light change to dark?)
 Layer 2: Detect shapes        (Are those edges forming circles? Squares?)
 Layer 3: Detect parts         (Is that circle an eye? A wheel?)
@@ -187,6 +192,7 @@ Nobody tells Layer 1 to look for edges or Layer 3 to look for eyes. These patter
 Research visualizing what neurons learn has confirmed this emergence. Zeiler & Fergus (2014) showed that early layers consistently develop edge detectors, middle layers develop texture and part detectors, and late layers develop object detectors—all without any human specification of what to look for.
 
 The specific patterns that emerge depend on:
+
 - The training data
 - The random initial weights
 - The network architecture
@@ -194,7 +200,7 @@ The specific patterns that emerge depend on:
 
 Different training runs produce different internal representations. The network finds *a* solution, not *the* solution.
 
-```
+```text
 ┌───────────┐   ┌───────────┐   ┌───────────┐   ┌───────────┐
 │  Layer 1  │   │  Layer 2  │   │  Layer 3  │   │  Layer 4  │
 │           │   │           │   │           │   │           │
@@ -219,7 +225,7 @@ This process has two distinct phases:
 
 **Phase 1: TRAINING (happens once, takes hours to months)**
 
-```
+```text
 Step 1: GUESS
    Network sees an image, makes a prediction: "I think this is a dog"
 
@@ -243,7 +249,7 @@ Training GPT-3 took several weeks on thousands of GPUs and cost an estimated $4.
 
 After training, the weights are fixed. When you use ChatGPT or Stable Diffusion, you are running the trained network forward—input goes in, output comes out. No learning happens during inference. The model cannot improve from your conversations (unless the company explicitly retrains it later).
 
-```
+```text
 TRAINING:    Input → Network → Output → Compare to answer → Adjust weights
              (Millions of times, expensive, done by AI companies)
 
@@ -265,7 +271,7 @@ Neural networks work the same way. Training is when learning happens. Inference 
 
 Small networks can learn small patterns. Bigger networks can learn bigger patterns. But there is a threshold where something surprising happens.
 
-```
+```text
 Network Size (parameters)    What It Can Do
 ─────────────────────────────────────────────────────
       1,000                  Simple patterns
@@ -307,7 +313,7 @@ The GPU (Graphics Processing Unit) was originally designed to render video game 
 
 To do this efficiently, GPUs have thousands of simple cores that can all work at once:
 
-```
+```text
 CPU: 8-16 powerful cores        GPU: 4,000-16,000 simple cores
      Doing different things          All doing the same thing
      Sequential processing           Parallel processing
@@ -320,7 +326,7 @@ CPU: 8-16 powerful cores        GPU: 4,000-16,000 simple cores
 
 A neural network is essentially a giant matrix multiplication. When an image passes through a layer, we multiply a matrix of pixel values by a matrix of weights:
 
-```
+```text
 [Input pixels] × [Weight matrix] = [Output values]
  (1 million)      (1M × 1M)         (1 million)
 ```
@@ -373,7 +379,7 @@ Instead of connecting every pixel to every neuron (which would require trillions
 
 Imagine you are inspecting a painting in a dark room with a small flashlight. You can only see a tiny patch at a time. As you move the flashlight around, you ask: "Is there a sharp change from light to dark here?" (edge detection) or "Is there a repeating pattern here?" (texture detection).
 
-```
+```text
 ┌──────────────────────────────────────────────────────────┐
 │  The "flashlight" (filter) slides across the image:      │
 │                                                          │
@@ -396,7 +402,7 @@ The filter learns what patterns to look for during training. Different filters l
 
 CNNs work for images because an image is a fixed grid of pixels. But language and audio are sequences—the order matters, and the length varies.
 
-```
+```text
 "The cat sat on the ___"
 
 To predict the blank, you need to remember "cat" from earlier.
@@ -404,7 +410,7 @@ To predict the blank, you need to remember "cat" from earlier.
 
 **RNNs process sequences one step at a time, carrying forward a "memory" of previous steps:**
 
-```
+```text
       ┌─────────────────────────────────────────┐
       │            Memory State                 │
       │      ↓        ↓        ↓        ↓       │
@@ -448,7 +454,7 @@ A bad librarian (like RNNs) reads every book in order, forgetting earlier books 
 
 A good librarian (like transformers) can look at ALL books simultaneously and instantly identify which ones are relevant:
 
-```
+```text
 Your question: "Victorian architecture"
 
 Library catalog:
@@ -467,7 +473,7 @@ In the sentence "The cat sat on the mat because **it** was tired," what does "it
 
 Self-attention computes relevance scores between every word and every other word:
 
-```
+```text
 Processing the word "it":
 
    The    cat    sat    on    the    mat  because   it    was  tired
@@ -480,6 +486,7 @@ Processing the word "it":
 ```
 
 **These attention patterns are LEARNED during training**, just like the weights in Part 2. The network sees millions of sentences and gradually adjusts its attention weights until it learns patterns like:
+
 - Pronouns usually connect to nearby nouns
 - Adjectives connect to what they describe
 - Subjects connect to their verbs
@@ -516,7 +523,7 @@ Every modern AI language model uses this basic recipe. Let me explain concretely
 
 A transformer block is a sequence of mathematical operations organized into code. Here is what one block does:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     TRANSFORMER BLOCK                        │
 │                                                              │
@@ -549,7 +556,7 @@ A transformer block is a sequence of mathematical operations organized into code
 
 Stacking means running the output of one block into the input of the next:
 
-```
+```text
 Input embeddings
        │
        ▼
@@ -616,6 +623,7 @@ When you use ChatGPT, you are running inference on a pre-trained model. The mode
 The original transformer paper focused on translation. But researchers quickly discovered that the architecture worked remarkably well for many tasks. The architecture's flexibility—its ability to find relevant patterns in any sequential data—made it a general-purpose tool.
 
 Within five years:
+
 - **GPT-3** (2020): 175 billion parameters, generates coherent text
 - **CLIP** (2021): Connects text and images in a shared space
 - **DALL-E 2** (2022): Generates images from text descriptions
@@ -636,7 +644,7 @@ Transformers solved the architecture problem—"how do we build a network that c
 
 GPT (Generative Pre-trained Transformer) models are trained on one simple task: **predict the next word**.
 
-```
+```text
 Training example:
    Input:  "The capital of France is"
    Target: "Paris"
@@ -656,7 +664,7 @@ The model does not "understand" these things—it learns statistical correlation
 
 Computers work with numbers, not letters. Text is converted to **tokens** (word pieces) before processing:
 
-```
+```text
 "Unbelievable" → ["Un", "believ", "able"]  → [45893, 12547, 481]
 
 "ChatGPT is amazing" → ["Chat", "G", "PT", " is", " amazing"]
@@ -675,6 +683,7 @@ You may know that computers ultimately work in binary—zeros and ones. Here is 
 The embedding step is crucial. Each token is converted to a list of hundreds of numbers (called a "vector" or "embedding"). These numbers are learned during training—similar words end up with similar number patterns.
 
 **Tokenization details:**
+
 - Common words = 1 token ("the", "and")
 - Rare words = multiple tokens ("antidisestablishmentarianism" = 6+ tokens)
 - GPT models use ~50,000 token vocabulary
@@ -684,7 +693,7 @@ The embedding step is crucial. Each token is converted to a list of hundreds of 
 
 Text generation is repeated prediction:
 
-```
+```text
 Start:      "Once upon a"
 
 Step 1:     Model computes probabilities for all 50,000 tokens:
@@ -707,7 +716,7 @@ Step 3:     Continue...
 
 **Temperature** controls how random the sampling is. This is a parameter you can adjust when using AI models through their APIs (programming interfaces), though most chat interfaces hide it from users.
 
-```
+```text
 Temperature = 0.1 (low):
     Probabilities: "time" = 65% → adjusted to 99%
     Almost always picks the highest probability token
@@ -752,6 +761,7 @@ As models got bigger, something unexpected happened:
 | GPT-4 | ~1.8T | Mar 2023 | Multi-modal, reasoning | Powers Bing Chat, many products |
 
 At GPT-3 scale, models began exhibiting "emergent" behaviors—abilities that appeared suddenly (Wei et al., 2022):
+
 - Answering questions they were not trained to answer
 - Translating between languages (trained mostly on English)
 - Writing code (trained mostly on natural language)
@@ -761,7 +771,7 @@ At GPT-3 scale, models began exhibiting "emergent" behaviors—abilities that ap
 
 Raw language models complete text but do not follow instructions well:
 
-```
+```text
 User: "Write a poem about the moon"
 Raw GPT-3: "...is a celestial body that orbits Earth at an average
           distance of 384,400 km. Its surface features include..."
@@ -799,12 +809,14 @@ Diffusion models work backwards from an unexpected starting point: **pure random
 **Analogy: Restoring a faded photograph**
 
 Imagine you have a perfectly clear photo. Someone damages it gradually:
+
 - Day 1: A tiny bit of static/grain added
 - Day 2: More static
 - ...
 - Day 100: Pure noise (looks like TV static, original unrecognizable)
 
 Now imagine you train a neural network to reverse this:
+
 - Show it the Day 100 static and the Day 99 slightly-less-noisy version
 - Train it: "Learn to predict what one step of noise removal looks like"
 - Repeat for Days 99→98, 98→97, etc.
@@ -827,7 +839,7 @@ Think of it this way:
 
 4. Different random starting noise → different random fluctuations get interpreted → different image emerges
 
-```
+```text
 Random Noise A    →    Network removes "noise"    →    Cat image
 [specific pattern]      [reveals underlying structure]
 
@@ -847,7 +859,7 @@ Diffusion models do the same thing, but with mathematical precision. They have l
 
 ### 6.3 How Diffusion Training Works
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────┐
 │  TRAINING: Teach the network to predict noise                   │
 │                                                                 │
@@ -874,7 +886,7 @@ This approach was formalized by Ho, Jain, and Abbeel (2020) in "Denoising Diffus
 
 ### 6.4 How Image Generation Works
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────┐
 │  GENERATION: Start from noise, iteratively denoise              │
 │                                                                 │
@@ -903,7 +915,7 @@ Working with full-resolution images is slow. A 512×512 image has 786,432 pixel 
 
 Recording a 2-hour lecture captures every word (huge file). Your notes capture the key ideas (small file). Later, you can reconstruct the lecture from your notes—not perfectly, but well enough.
 
-```
+```text
 Full Image (512×512)    "Latent" (64×64)     Denoised Latent    Full Image
     786,432 values   ─►   16,384 values   ─►    Denoised     ─►  Decoded
          │                     │                  │                │
@@ -924,7 +936,7 @@ CLIP (Contrastive Language-Image Pre-training) was trained by OpenAI on 400 mill
 
 CLIP learned to connect text and images in a shared "embedding space":
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │  CLIP EMBEDDING SPACE (simplified)                              │
 │                                                                 │
@@ -941,7 +953,7 @@ CLIP learned to connect text and images in a shared "embedding space":
 
 During diffusion, CLIP-encoded text guides the denoising:
 
-```
+```text
 Prompt: "a cat wearing a top hat, digital art"
               │
               ▼
@@ -976,6 +988,7 @@ Modern diffusion tools offer many control methods:
 LoRA is a technique for efficiently fine-tuning large models (Hu et al., 2021). Instead of updating all ~1 billion parameters, LoRA updates a small set of ~4 million parameters that modify the model's behavior.
 
 Use cases:
+
 - Train a LoRA on 20 photos of your face → generate yourself in any style
 - Train on 50 images of a specific art style → apply that style to any prompt
 - Train on reference images of a character → consistent character across images
@@ -986,7 +999,7 @@ Use cases:
 
 ControlNet (Zhang et al., 2023) adds spatial control to diffusion models. Instead of describing everything in text, you provide a structural guide:
 
-```
+```text
 Input: Pose skeleton image + prompt "professional dancer"
 Output: Image following the exact pose with dancer appearance
 
@@ -1020,7 +1033,9 @@ Diffusion creates 2D images. Part 7 shows how to extend these ideas to 3D—crit
 Generating 3D content is harder than 2D for several reasons:
 
 1. **Limited training data**: We have billions of labeled images. We do not have billions of labeled 3D models.
+
 2. **Multiple representations**: Images are grids of pixels. 3D can be meshes, point clouds, volumes, or learned functions.
+
 3. **View consistency**: A 3D object must look correct from every angle—not just one.
 
 ### 7.2 Traditional 3D Capture: Photogrammetry
@@ -1034,6 +1049,7 @@ Photogrammetry reconstructs 3D geometry from 2D photographs. You photograph an o
 **[FIGURE PLACEHOLDER: Photogrammetry pipeline - multiple photos → feature matching → point cloud → mesh]**
 
 **How it works:**
+
 1. Take 50–200 photos of an object from different angles
 2. Software finds matching features (corners, edges) across photos
 3. Triangulation computes 3D positions of matched points
@@ -1042,6 +1058,7 @@ Photogrammetry reconstructs 3D geometry from 2D photographs. You photograph an o
 6. Texture projection maps photo colors onto mesh
 
 **Limitations:**
+
 - Struggles with reflective/transparent surfaces
 - Requires many photos from controlled angles
 - Reconstruction is brittle—bad photos ruin results
@@ -1055,7 +1072,7 @@ Photogrammetry has been used for decades in VFX, games, and cultural heritage do
 
 **Neural Radiance Fields (NeRF)** had a radical idea: represent a 3D scene as a neural network (Mildenhall et al., 2020).
 
-```
+```text
 Traditional 3D:  Store a mesh (vertices, faces, textures)
                  File contains explicit geometry
 
@@ -1068,7 +1085,7 @@ NeRF:            Store a neural network
 
 Train a network on photos from multiple angles:
 
-```
+```text
 ┌────────────────────────────────────────────────────────────┐
 │  TRAINING                                                   │
 │                                                             │
@@ -1099,6 +1116,7 @@ NeRF produces photorealistic novel views, including correct reflections and view
 **What is a Gaussian splat?**
 
 Each "splat" is a 3D ellipsoid with:
+
 - **Position** (x, y, z): Where in 3D space
 - **Size/shape**: Three radii defining an ellipsoid (can be stretched long and thin, or nearly spherical)
 - **Opacity**: How transparent (0 = invisible, 1 = solid)
@@ -1110,7 +1128,7 @@ Real-world surfaces look different from different angles. A mirror reflects diff
 
 Spherical harmonics are a mathematical way to encode "how this color changes depending on viewing direction." Each Gaussian stores coefficients that define a function:
 
-```
+```text
 color = f(viewing_angle)
 
 From the front:  Reddish
@@ -1126,7 +1144,7 @@ This enables 3D Gaussian Splatting to capture reflections, specularity, and subt
 
 **Why Gaussians are fast:**
 
-```
+```text
 NeRF:        Query network millions of times per image (slow)
 
 Gaussians:   Project ellipsoids onto screen, blend colors (fast)
@@ -1147,7 +1165,7 @@ The insight: We have powerful 2D image generators (Stable Diffusion). We do not 
 
 **Score Distillation Sampling:**
 
-```
+```text
 ┌────────────────────────────────────────────────────────────┐
 │  Prompt: "a fox wearing a wizard hat"                       │
 │                                                             │
@@ -1180,6 +1198,7 @@ A common failure mode in text-to-3D: the model creates an object with the descri
 This happens because 2D diffusion models see every view independently. They want each view to match the prompt. Since "dog" usually shows a face, every view gets a face.
 
 **Current limitations:**
+
 - Slow: Minutes to hours per object
 - Quality varies: Janus problem, blurry details
 - Not production-ready: Outputs need cleanup for game engines
@@ -1208,12 +1227,14 @@ API stands for Application Programming Interface. It is a structured way for sof
 **Analogy: Restaurant ordering**
 
 When you go to a restaurant, you do not walk into the kitchen and cook. Instead:
+
 1. You read the **menu** (available options)
 2. You give your **order** to the waiter (structured request)
 3. The kitchen **prepares** it (processing)
 4. You receive your **meal** (response)
 
 An API works the same way:
+
 1. **Documentation** describes available operations
 2. Your program sends a **request** in a specific format
 3. The service **processes** it
@@ -1238,6 +1259,7 @@ print(response.choices[0].message.content)
 ```
 
 The API provides:
+
 - **Structured input**: JSON format with specific fields
 - **Controllable parameters**: temperature, max_tokens, model selection
 - **Predictable output**: Response in consistent format
@@ -1247,6 +1269,7 @@ The API provides:
 A language model generates text by predicting tokens. But code is text. If the training data includes code (which it does—GitHub, Stack Overflow, documentation), the model learns code patterns too.
 
 This means:
+
 - GPT can write Python, JavaScript, SQL, and dozens of other languages
 - It can explain code, debug code, translate between languages
 - It can write API calls to other services
@@ -1255,7 +1278,7 @@ This means:
 
 If we give a language model access to APIs (tools), and it can write the code to call those APIs, then it can take actions in the world.
 
-```
+```text
 User: "What's the weather in Tokyo?"
 
 Model generates text that happens to be a function call:
@@ -1274,7 +1297,7 @@ The model is not "deciding" anything. It is generating text that follows pattern
 
 Modern AI agents follow an iterative cycle:
 
-```
+```text
         ┌──────────────┐
         │   OBSERVE    │  ← Receive task or feedback
         └──────┬───────┘
@@ -1296,6 +1319,7 @@ Modern AI agents follow an iterative cycle:
 ```
 
 This is the architecture behind:
+
 - **ChatGPT with Code Interpreter**: Writes and executes Python code
 - **Claude Code**: Reads, edits, and runs code in your terminal
 - **GitHub Copilot**: Suggests and completes code as you type
@@ -1309,7 +1333,7 @@ Recent research explores multiple AI agents collaborating:
 
 **[FIGURE PLACEHOLDER: ChatDev architecture diagram from Qian et al. (2023) showing agent roles and communication flow]**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    CHATDEV                               │
 │                                                          │
@@ -1342,7 +1366,7 @@ This suggests future creative tools might orchestrate specialized AI agents (cha
 
 Larger models perform better when prompted to "think step by step" (Wei et al., 2022):
 
-```
+```text
 Question: "If a store has 5 apples, sells 2, then receives
            a shipment of 3 boxes with 6 apples each,
            how many apples does it have?"
@@ -1386,12 +1410,14 @@ Remember: This is pattern matching at massive scale, not understanding or creati
 ### 9.2 What This Means for Creative Work
 
 Traditional digital content creation requires:
+
 - **Years of specialized training** (modeling, animation, music)
 - **Expensive software** (Maya, ZBrush, Substance)
 - **Significant time per asset** (days to weeks)
 - **Large teams for ambitious projects**
 
 AI tools offer:
+
 - **Natural language interfaces** ("make it more epic")
 - **Rapid iteration** (seconds instead of hours)
 - **Scalable generation** (100 variations instantly)
@@ -1414,7 +1440,7 @@ These limitations are documented across the research literature:
 
 Research and practice suggest that **augmentation outperforms replacement**. Studies on human-AI collaboration (e.g., Noy & Zhang, 2023 on writing; Peng et al., 2023 on coding) find that AI assistance improves productivity when humans remain in the loop for direction and quality control.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │  HUMAN RESPONSIBILITIES          AI CAPABILITIES             │
 │                                                              │
@@ -1453,9 +1479,13 @@ For indie developers, AI tools transform the production equation:
 Success requires:
 
 1. **Clear creative vision**: AI generates variations; you must know what you want
+
 2. **Curation skills**: Recognizing good outputs from mediocre ones
+
 3. **Technical integration**: Getting AI outputs into game engines
+
 4. **Coherence maintenance**: Ensuring the world feels unified, not random
+
 5. **Ethical awareness**: Understanding where training data comes from
 
 ### 10.3 The Central Thesis Question
@@ -1466,6 +1496,7 @@ In 1985, a small team could create Ultima IV—a genre-defining RPG.
 In 2011, Skyrim required 100+ developers and $85 million.
 
 The tools documented in this thesis suggest a middle path may emerge:
+
 - Not fully autonomous world generation (unreliable, incoherent)
 - Not traditional production pipelines (too expensive for individuals)
 - But AI-augmented workflows where one person directs many AI systems
@@ -1478,7 +1509,7 @@ The answer is still being written. This thesis documents the tools, their capabi
 
 The evolution from mathematical theory to practical creative tools follows a clear path:
 
-```
+```text
 1943: McCulloch & Pitts propose artificial neurons
 1958: Rosenblatt's Perceptron (first trainable neural network)
         │

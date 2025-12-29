@@ -1,6 +1,6 @@
 # Literature Review Checkpoint
 
-Last Updated: 2025-12-29T14:00:00
+Last Updated: 2025-12-29T04:30:00
 
 ## THESIS INTENTION (North Star)
 
@@ -22,17 +22,22 @@ Last Updated: 2025-12-29T14:00:00
 ---
 
 ## Session Status
-- **Phase:** PHASE 1 COMPLETE - SCOPING SEARCH FINISHED
-- **Next Action:** Begin Phase 2 - Manual review, narrow to 60-80 papers, choose focus domains
+- **Phase:** PHASE 1 COMPLETE - AI/ML EXPLAINER POLISHED
+- **Next Action:** Extract figures from PDFs, test LaTeX pipeline, begin Phase 2
 
-## Current Session Tasks (Completed)
-1. [x] Rewrite methodology as "Phase 1: Scoping Search" with novice explanations
-2. [x] Add tech stack section (Cursor, Claude Code, MCP tools)
-3. [x] Add research landscape context (arXiv, SIGGRAPH, conferences)
-4. [x] Rewrite Domain 8f with academic citations (14 papers added)
-5. [x] Verify paper counts (~170 total, ~150 academic)
-6. [x] Update German translation
-7. [x] Update checkpoint and README
+## Current Session Tasks (2025-12-29)
+1. [x] Comprehensive AI/ML Explainer rewrite with 30+ APA citations
+2. [x] Fix all markdown lint errors (100+ fixed)
+3. [x] Create figures directory structure
+4. [x] Download academic papers for figure extraction (5 PDFs, ~49MB)
+5. [x] Create ComfyUI placeholder instructions (3 variations)
+6. [x] Port LaTeX/PDF build pipeline from master-thesis
+7. [x] Update checkpoint
+
+## Pending Manual Tasks (User Action Required)
+1. [ ] Extract figures from downloaded PDFs (see `figures/ch-explainer/placeholders/figure-extraction-guide.md`)
+2. [ ] Create ComfyUI screenshots (see `figures/ch-explainer/placeholders/comfyui-instructions.md`)
+3. [ ] Test PDF build: `make explainer`
 
 ---
 
@@ -101,6 +106,19 @@ Last Updated: 2025-12-29T14:00:00
 - [x] Science MCP configured (arXiv + OpenAlex)
 - [x] Papers MCP configured
 - [x] CLAUDE.md with autonomous behavior rules
+- [x] Markdownlint configured (`.markdownlint.json`)
+- [x] LaTeX/PDF build pipeline (`make explainer`)
+- [x] Figures directory structure with extraction guides
+
+## New Files Created (This Session)
+- `.markdownlint.json` - Markdownlint configuration
+- `Makefile` - Build automation
+- `scripts/build-explainer.py` - PDF build script
+- `templates/explainer.tex` - LaTeX template
+- `figures/README.md` - Figure sources documentation
+- `figures/ch-explainer/placeholders/comfyui-instructions.md` - ComfyUI screenshot guide
+- `figures/ch-explainer/placeholders/figure-extraction-guide.md` - PDF extraction guide
+- `figures/ch-explainer/paper-*.pdf` - 5 downloaded academic papers
 
 ---
 
