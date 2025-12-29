@@ -35,11 +35,12 @@ explainer:
 		--template=../templates/thesis.tex \
 		--pdf-engine=lualatex \
 		--toc \
-		-V title="AI/ML Foundations Explainer" \
-		-V author="Jennifer Ried" \
+		-V title="Master Thesis Appendix B: AI/ML Foundations Explainer" \
+		-V author="Jennifer Meier" \
 		-V date="December 2025" \
 		-V institute="Technische Hochschule Ostwestfalen-Lippe" \
 		-V department="Department of Media Production" \
+		-V course="Master Media Production" \
 		-o ../export/ai_ml_foundations_explainer.pdf 2>&1 || \
 		(echo "Thesis template failed, using simple build..."; \
 		 pandoc ai_ml_foundations_explainer.md \
@@ -56,11 +57,12 @@ lit-review:
 		--template=../templates/thesis.tex \
 		--pdf-engine=lualatex \
 		--toc \
-		-V title="Literature Review: AI-Assisted Worldbuilding" \
-		-V author="Jennifer Ried" \
+		-V title="Master Thesis Appendix A: Scoping Literature Review" \
+		-V author="Jennifer Meier" \
 		-V date="December 2025" \
 		-V institute="Technische Hochschule Ostwestfalen-Lippe" \
 		-V department="Department of Media Production" \
+		-V course="Master Media Production" \
 		-o ../export/literature_review_chapter.pdf 2>&1 || \
 		(echo "Thesis template failed, using simple build..."; \
 		 pandoc literature_review_chapter.md \
